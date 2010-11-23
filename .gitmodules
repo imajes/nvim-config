@@ -31,3 +31,6 @@
 [submodule "bundle/vim-slurper"]
 	path = bundle/vim-slurper
 	url = https://github.com/alowe/vim-slurper.git
+[submodule "bundle/vim-cucumber"]
+	path = bundle/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber.git
