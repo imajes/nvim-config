@@ -28,3 +28,6 @@
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
 	url = http://github.com/tpope/vim-unimpaired.git
+[submodule "bundle/vim-slurper"]
+	path = bundle/vim-slurper
+	url = https://github.com/alowe/vim-slurper.git
