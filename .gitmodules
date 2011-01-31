@@ -37,3 +37,6 @@
 [submodule "bundle/ruby-debugger"]
 	path = bundle/ruby-debugger
 	url = git://github.com/astashov/vim-ruby-debugger.git
+[submodule "bundle/gist-vim"]
+	path = bundle/gist-vim
+	url = https://github.com/mattn/gist-vim.git
