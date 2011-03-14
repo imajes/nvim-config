@@ -542,6 +542,7 @@ if (&t_Co > 2 || has("gui_running")) && has("syntax")
     if exists("&guifont")
       if has("mac")
         set guifont=inconsolata-dz:h12
+        "set guifont=essential\ pragmatapro:h15
       elseif has("unix")
         if &guifont == ""
           set guifont=bitstream\ vera\ sans\ mono\ 11
