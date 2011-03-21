@@ -30,7 +30,7 @@
 	url = http://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/vim-slurper"]
 	path = bundle/vim-slurper
-	url = https://github.com/alowe/vim-slurper.git
+	url = https://github.com/adamlowe/vim-slurper.git
 [submodule "bundle/vim-cucumber"]
 	path = bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
