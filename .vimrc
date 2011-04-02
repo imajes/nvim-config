@@ -564,21 +564,14 @@ if (&t_Co > 2 || has("gui_running")) && has("syntax")
   endif
   set list
   set hlsearch
-  if !exists('g:colors_name')
-    if filereadable(expand("~/.vim/colors/tim.vim"))
-      colorscheme tim
-    elseif filereadable(expand("~/.vim/colors/tpope.vim"))
-      colorscheme tpope
-    endif
-  endif
 
   augroup RCVisual
     autocmd!
 
     "autocmd VimEnter *  set background=dark notitle noicon
-    autocmd GUIEnter *  set background=light title icon cmdheight=2 lines=45 columns=185 guioptions-=e
+    autocmd GUIEnter *  set background=dark title icon cmdheight=2 lines=45 columns=185 guioptions-=e
     autocmd GUIEnter *  if has("diff") && &diff | set columns=165 | endif
-    autocmd GUIEnter *  colorscheme wombat256  "vividchalk
+    autocmd GUIEnter *  colorscheme solarized "wombat256
     autocmd GUIEnter *  call s:initialize_font()
     autocmd Syntax css  syn sync minlines=50
     autocmd Syntax csh  hi link cshBckQuote Special | hi link cshExtVar PreProc | hi link cshSubst PreProc | hi link cshSetVariables Identifier
