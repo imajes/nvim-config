@@ -1,7 +1,7 @@
 iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger
 iabbrev rd require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger
 
-nmap <silent> <Leader>t :!/usr/local/bin/ctags -R --languages=Ruby,C,C++ -f .tags --langmap='ruby:+.rake.builder.haml'<CR>
+nmap <silent> <Leader>g :!/usr/local/bin/ctags -R --languages=Ruby,C,C++ -f .tags --langmap='ruby:+.rake.builder.haml'<CR>
 set tags=.tags
 
 set nu
@@ -23,6 +23,12 @@ cnoreabbrev  squash %s/\s\{4\}/  /g
 "set clipboard=exclude:.*
 
 au FocusLost * :wa
+"au FocusLost * :stopinsert
+
+" supertab, omnicomplete
+"filetype plugin on
+"set ofu=syntaxcomplete#Complete
+"let g:SuperTabDefaultCompletionType = "context"
 
 let g:gist_clip_command = 'pbcopy'
 let g:gist_open_browser_after_post = 1
