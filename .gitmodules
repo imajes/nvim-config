@@ -43,3 +43,6 @@
 [submodule "bundle/vim-colors-solarized"]
   path = bundle/vim-colors-solarized
   url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-session"]
+	path = bundle/vim-session
+	url = git://github.com/vim-scripts/session.vim--Odding.git
