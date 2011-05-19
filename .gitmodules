@@ -46,3 +46,6 @@
 [submodule "bundle/vim-session"]
 	path = bundle/vim-session
 	url = git://github.com/vim-scripts/session.vim--Odding.git
+[submodule "bundle/tcomment"]
+	path = bundle/tcomment
+	url = https://github.com/tomtom/tcomment_vim
