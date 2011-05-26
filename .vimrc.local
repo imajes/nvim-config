@@ -22,8 +22,18 @@ cnoreabbrev  ws %s/\s\+$//g
 cnoreabbrev  squash %s/\s\{4\}/  /g
 "set clipboard=exclude:.*
 
+" customize rails.vim
+autocmd User Rails Rnavcommand -suffix=.rb     factory test/factories spec/factories -glob=**/* -default=model()
+autocmd User Rails Rnavcommand -suffix=.sass   sass    app/stylesheets
+autocmd User Rails Rnavcommand -suffix=.coffee coffee  app/coffeescripts
+autocmd User Rails Rnavcommand -suffix=.rb     lib     app/lib
+
 au FocusLost * :wa
 "au FocusLost * :stopinsert
+
+"let g:session_autoload = 0
+let g:session_default_to_last = 1
+let g:session_autosave = 1
 
 " supertab, omnicomplete
 "filetype plugin on
