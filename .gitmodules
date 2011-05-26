@@ -45,7 +45,7 @@
   url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-session"]
 	path = bundle/vim-session
-	url = git://github.com/vim-scripts/session.vim--Odding.git
+	url = https://github.com/xolox/vim-session.git
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = https://github.com/tomtom/tcomment_vim
