@@ -31,7 +31,7 @@ autocmd User Rails Rnavcommand -suffix=.rb     lib     app/lib
 au FocusLost * :wa
 "au FocusLost * :stopinsert
 
-"let g:session_autoload = 0
+let g:session_autoload = 1
 let g:session_default_to_last = 1
 let g:session_autosave = 1
 
