@@ -23,10 +23,12 @@ cnoreabbrev  squash %s/\s\{4\}/  /g
 "set clipboard=exclude:.*
 
 " customize rails.vim
-autocmd User Rails Rnavcommand -suffix=.rb     factory test/factories spec/factories -glob=**/* -default=model()
-autocmd User Rails Rnavcommand -suffix=.sass   sass    app/stylesheets
-autocmd User Rails Rnavcommand -suffix=.coffee coffee  app/coffeescripts
-autocmd User Rails Rnavcommand -suffix=.rb     lib     app/lib
+autocmd User Rails Rnavcommand -suffix=.rb       factory test/factories spec/factories -glob=**/* -default=model()
+autocmd User Rails Rnavcommand -suffix=.sass     sass    app/stylesheets
+autocmd User Rails Rnavcommand -suffix=.coffee   coffee  app/coffeescripts
+autocmd User Rails Rnavcommand -suffix=.rb       lib     app/lib
+autocmd User Rails Rnavcommand -suffix=.feature  feature features
+autocmd User Rails Rnavcommand -suffix=_steps.rb steps   features/step_definitions
 
 au FocusLost * :wa
 "au FocusLost * :stopinsert
