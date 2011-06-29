@@ -12,23 +12,44 @@ set softtabstop=2
 set expandtab
 set autowrite
 
-" rubies
-autocmd BufNewFile,BufRead Gemfile set ft=ruby
+" stolen from elsewhere
+autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
+            \ if isdirectory(expand("<amatch>:h")) | let &swapfile = &modified | endif
+
+autocmd BufNewFile,BufRead *.haml             set ft=haml
+autocmd BufNewFile,BufRead *.feature,*.story  set ft=cucumber
+autocmd BufRead * if ! did_filetype() && getline(1)." ".getline(2).
+            \ " ".getline(3) =~? '<\%(!DOCTYPE \)\=html\>' | setf html | endif
+
+autocmd FileType javascript,coffee      setlocal et sw=2 sts=2 isk+=$
+autocmd FileType html,xhtml,css,scss    setlocal et sw=2 sts=2
+autocmd FileType eruby,yaml,ruby        setlocal et sw=2 sts=2
+autocmd FileType cucumber               setlocal et sw=2 sts=2
+autocmd FileType gitcommit              setlocal spell
+autocmd FileType gitconfig              setlocal noet sw=8
+autocmd FileType ruby                   setlocal comments=:#\  tw=79
+autocmd FileType sh,csh,zsh             setlocal et sw=2 sts=2
+autocmd FileType vim                    setlocal et sw=2 sts=2 keywordprg=:help
+autocmd FileType gem                    setlocal ft=ruby
+
+autocmd Syntax   css  syn sync minlines=50
 autocmd FileType css set fdm=marker fmr={,}
 
 set hlsearch
 nmap <silent> <Leader>h :%s/require 'test_helper'/require File.expand_path(File.dirname(__FILE__) + "\/..\/test_helper")/g
+cmap w!! %!sudo tee > /dev/null % # force save with sudo
 cnoreabbrev  ws %s/\s\+$//g
 cnoreabbrev  squash %s/\s\{4\}/  /g
 "set clipboard=exclude:.*
 
 " customize rails.vim
-autocmd User Rails Rnavcommand -suffix=.rb       factory test/factories spec/factories -glob=**/* -default=model()
-autocmd User Rails Rnavcommand -suffix=.sass     sass    app/stylesheets
-autocmd User Rails Rnavcommand -suffix=.coffee   coffee  app/coffeescripts
-autocmd User Rails Rnavcommand -suffix=.rb       lib     app/lib
-autocmd User Rails Rnavcommand -suffix=.feature  feature features
-autocmd User Rails Rnavcommand -suffix=_steps.rb steps   features/step_definitions
+autocmd User Rails Rnavcommand -suffix=.rb            factory    test/factories spec/factories -glob=**/* -default=model()
+autocmd User Rails Rnavcommand -suffix=_fabricator.rb fabricator test/fabricators spec/fabricators -glob=**/* -default=model()
+autocmd User Rails Rnavcommand -suffix=.sass          sass       app/stylesheets
+autocmd User Rails Rnavcommand -suffix=.coffee        coffee     app/coffeescripts
+autocmd User Rails Rnavcommand -suffix=.rb            lib        app/lib
+autocmd User Rails Rnavcommand -suffix=.feature       feature    features
+autocmd User Rails Rnavcommand -suffix=_steps.rb      steps      features/step_definitions
 
 au FocusLost * :wa
 "au FocusLost * :stopinsert
