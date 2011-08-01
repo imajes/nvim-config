@@ -141,4 +141,13 @@ autocmd BufWritePre *.rb,*.yml,*.js,*.css,*.less,*.sass,*.html,*.xml,*.erb,*.ham
 "misc
 autocmd BufWritePre *.java,*.php :%s/\s\+$//e
 
+" from vimcasts.org
+"
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+nmap gV `[v`]
 
