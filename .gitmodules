@@ -46,3 +46,6 @@
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = https://github.com/tomtom/tcomment_vim
+[submodule "bundle/vim-simplenote"]
+	path = bundle/vim-simplenote
+	url = git://github.com/mrtazz/simplenote.vim.git
