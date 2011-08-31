@@ -3,6 +3,7 @@ iabbrev rd require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 
 
 nmap <silent> <Leader>g :!/usr/local/bin/ctags -R --languages=Ruby,C,C++ -f .tags --langmap='ruby:+.rake.builder.haml'<CR>
 set tags=.tags
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 set nu
 set nobackup
@@ -45,6 +46,7 @@ cnoreabbrev  squash %s/\s\{4\}/  /g
 " customize rails.vim
 autocmd User Rails Rnavcommand -suffix=.rb            factory    test/factories spec/factories -glob=**/* -default=model()
 autocmd User Rails Rnavcommand -suffix=_fabricator.rb fabricator test/fabricators spec/fabricators -glob=**/* -default=model()
+autocmd User Rails Rnavcommand -suffix=_job.rb        job        app/jobs
 autocmd User Rails Rnavcommand -suffix=.sass          sass       app/stylesheets
 autocmd User Rails Rnavcommand -suffix=.coffee        coffee     app/coffeescripts
 autocmd User Rails Rnavcommand -suffix=.rb            lib        app/lib
