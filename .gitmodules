@@ -55,3 +55,6 @@
 [submodule "bundle/match-tag"]
 	path = bundle/match-tag
 	url = https://github.com/gregsexton/MatchTag.git
+[submodule "bundle/vim-textobj-rubyblock"]
+	path = bundle/vim-textobj-rubyblock
+	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
