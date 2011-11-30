@@ -1,66 +1,66 @@
 [submodule "bundle/nerdtree"]
-				path = bundle/nerdtree
-				url = http://github.com/scrooloose/nerdtree.git
+	path = bundle/nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
 [submodule "bundle/vim-abolish"]
-				path = bundle/vim-abolish
-				url = http://github.com/tpope/vim-abolish.git
+	path = bundle/vim-abolish
+	url = http://github.com/tpope/vim-abolish.git
 [submodule "bundle/vim-fugitive"]
-				path = bundle/vim-fugitive
-				url = http://github.com/tpope/vim-fugitive.git
+	path = bundle/vim-fugitive
+	url = http://github.com/tpope/vim-fugitive.git
 [submodule "bundle/vim-haml"]
-				path = bundle/vim-haml
-				url = http://github.com/tpope/vim-haml.git
+	path = bundle/vim-haml
+	url = http://github.com/tpope/vim-haml.git
 [submodule "bundle/vim-markdown"]
-				path = bundle/vim-markdown
-				url = http://github.com/tpope/vim-markdown.git
+	path = bundle/vim-markdown
+	url = http://github.com/tpope/vim-markdown.git
 [submodule "bundle/vim-rails"]
-				path = bundle/vim-rails
-				url = http://github.com/tpope/vim-rails.git
+	path = bundle/vim-rails
+	url = http://github.com/tpope/vim-rails.git
 [submodule "bundle/vim-speeddating"]
-				path = bundle/vim-speeddating
-				url = http://github.com/tpope/vim-speeddating.git
+	path = bundle/vim-speeddating
+	url = http://github.com/tpope/vim-speeddating.git
 [submodule "bundle/vim-surround"]
-				path = bundle/vim-surround
-				url = http://github.com/tpope/vim-surround.git
+	path = bundle/vim-surround
+	url = http://github.com/tpope/vim-surround.git
 [submodule "bundle/vim-unimpaired"]
-				path = bundle/vim-unimpaired
-				url = http://github.com/tpope/vim-unimpaired.git
+	path = bundle/vim-unimpaired
+	url = http://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/vim-slurper"]
-				path = bundle/vim-slurper
-				url = https://github.com/adamlowe/vim-slurper.git
+	path = bundle/vim-slurper
+	url = https://github.com/adamlowe/vim-slurper.git
 [submodule "bundle/vim-cucumber"]
-				path = bundle/vim-cucumber
-				url = https://github.com/tpope/vim-cucumber.git
+	path = bundle/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber.git
 [submodule "bundle/ruby-debugger"]
-				path = bundle/ruby-debugger
-				url = git://github.com/astashov/vim-ruby-debugger.git
+	path = bundle/ruby-debugger
+	url = git://github.com/astashov/vim-ruby-debugger.git
 [submodule "bundle/gist-vim"]
-				path = bundle/gist-vim
-				url = https://github.com/mattn/gist-vim.git
+	path = bundle/gist-vim
+	url = https://github.com/mattn/gist-vim.git
 [submodule "bundle/vim-colors-solarized"]
-				path = bundle/vim-colors-solarized
-				url = git://github.com/altercation/vim-colors-solarized.git
+	path = bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-session"]
-				path = bundle/vim-session
-				url = https://github.com/xolox/vim-session.git
+	path = bundle/vim-session
+	url = https://github.com/xolox/vim-session.git
 [submodule "bundle/tcomment"]
-				path = bundle/tcomment
-				url = https://github.com/tomtom/tcomment_vim
+	path = bundle/tcomment
+	url = https://github.com/tomtom/tcomment_vim
 [submodule "bundle/rvm-vim"]
-				path = bundle/rvm-vim
-				url = https://github.com/sprsquish/rvm.vim
+	path = bundle/rvm-vim
+	url = https://github.com/sprsquish/rvm.vim
 [submodule "bundle/vim-bundler"]
-				path = bundle/vim-bundler
-				url = https://github.com/tpope/vim-bundler.git
+	path = bundle/vim-bundler
+	url = https://github.com/tpope/vim-bundler.git
 [submodule "bundle/match-tag"]
-				path = bundle/match-tag
-				url = https://github.com/gregsexton/MatchTag.git
+	path = bundle/match-tag
+	url = https://github.com/gregsexton/MatchTag.git
 [submodule "bundle/vim-textobj-rubyblock"]
-				path = bundle/vim-textobj-rubyblock
-				url = https://github.com/nelstrom/vim-textobj-rubyblock.git
+	path = bundle/vim-textobj-rubyblock
+	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
 [submodule "bundle/vim-textobj-user"]
-				path = bundle/vim-textobj-user
-				url = https://github.com/kana/vim-textobj-user.git
+	path = bundle/vim-textobj-user
+	url = https://github.com/kana/vim-textobj-user.git
 [submodule "bundle/vim-peepopen"]
 	path = bundle/vim-peepopen
 	url = https://github.com/shemerey/vim-peepopen.git
