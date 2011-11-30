@@ -1,5 +1,4 @@
-iabbrev rdebug require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger
-iabbrev rd require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger
+iabbrev rd require 'ruby-debug'; Debugger.start; debugger
 
 nmap <silent> <Leader>g :!/usr/local/bin/ctags -R --languages=Ruby,C,C++ -f .tags --langmap='ruby:+.rake.builder.haml'<CR>
 set tags=.tags
@@ -12,6 +11,16 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set autowrite
+
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+  let l:modeline = printf(" vim: set et ts=%d sw=%d tw=%d ft=%s :", &tabstop, &shiftwidth, &textwidth, &ft)
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 " stolen from elsewhere
 autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
@@ -36,11 +45,25 @@ autocmd FileType gem                    setlocal ft=ruby
 autocmd Syntax   css  syn sync minlines=50
 autocmd FileType css set fdm=marker fmr={,}
 
+au! BufRead,BufNewFile *.json set filetype=json
+
+augroup json_autocmd
+  autocmd!
+  autocmd FileType json set autoindent
+  autocmd FileType json set formatoptions=tcq2l
+  autocmd FileType json set textwidth=78 shiftwidth=2
+  autocmd FileType json set softtabstop=2 tabstop=8
+  autocmd FileType json set expandtab
+  autocmd FileType json set foldmethod=syntax
+augroup END
+
+
 set hlsearch
 nmap <silent> <Leader>h :%s/require 'test_helper'/require File.expand_path(File.dirname(__FILE__) + "\/..\/test_helper")/g
 cmap w!! %!sudo tee > /dev/null % # force save with sudo
 cnoreabbrev  ws %s/\s\+$//g
 cnoreabbrev  squash %s/\s\{4\}/  /g
+cnoreabbrev  nf set nofoldenable
 "set clipboard=exclude:.*
 
 " customize rails.vim
@@ -48,6 +71,7 @@ autocmd User Rails Rnavcommand -suffix=.rb            factory    test/factories 
 autocmd User Rails Rnavcommand -suffix=_fabricator.rb fabricator test/fabricators spec/fabricators -glob=**/* -default=model()
 autocmd User Rails Rnavcommand -suffix=_job.rb        job        app/jobs
 autocmd User Rails Rnavcommand -suffix=.sass          sass       app/stylesheets
+autocmd User Rails Rnavcommand -suffix=.less          less       app/stylesheets
 autocmd User Rails Rnavcommand -suffix=.coffee        coffee     app/coffeescripts
 autocmd User Rails Rnavcommand -suffix=.rb            lib        app/lib
 autocmd User Rails Rnavcommand -suffix=.feature       feature    features
