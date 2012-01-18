@@ -1,8 +1,8 @@
 " ~/.vim/.vimrc !
-" vim:set ft=vim et tw=78 sw=2:
 
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#runtime_prepend_subdirectories("~./vim/bundle")
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+call pathogen#helptags()
 
 if filereadable(expand("~/.vim/rc.d/base_options.vim"))
   source ~/.vim/rc.d/base_options.vim
@@ -14,3 +14,5 @@ if filereadable(expand("~/.vim/rc.d/base_options.vim"))
   source ~/.vim/rc.d/line_commenting.vim
   source ~/.vim/rc.d/web_related.vim
 endif
+
+" vim:set ft=vim et tw=78 sw=2:

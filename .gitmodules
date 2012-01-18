@@ -67,3 +67,12 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/vim-endwise"]
+	path = bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise
+[submodule "bundle/pathogen"]
+	path = bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule "bundle/vim-pathogen"]
+	path = bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git

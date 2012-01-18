@@ -12,6 +12,10 @@ endif
 inoremap <C-C> <Esc>`^
 nnoremap zS  r<CR>ddkP=j
 
+" emacs style mappings
+inoremap  <C-A> <C-O>^
+cnoremap  <C-A> <Home>
+
 nnoremap =p m`=ap``
 nnoremap == ==
 vnoremap     <M-<> <gv
