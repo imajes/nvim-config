@@ -1,9 +1,10 @@
 " Plugin Settings
 " ---------------------
-
 if has("eval")
   let g:is_bash = 1
   let g:lisp_rainbow = 1
+
+  map <unique> <silent> <Leader>r <Plug>SimpleFold_Foldsearch
 
   " let g:rubyindent_match_parentheses = 0
   let g:ruby_minlines = 500
@@ -11,24 +12,15 @@ if has("eval")
   let g:rubycomplete_rails = 1
   let g:ruby_debugger_progname = 'mvim'
 
-  let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
-
-  let g:allml_global_maps = 1
-
-  let g:EnhCommentifyUseAltKeys = 'Yes'
-  let g:EnhCommentifyBindInInsert = 'No'
-  let g:EnhCommentifyRespectIndent = 'Yes'
-
-  let g:miniBufExplForceSyntaxEnable = 1
+  if has("gui_running")
+    let g:Powerline_theme = 'solarized'
+  endif
+  let g:Powerline_symbols = 'fancy'
 
   let g:NERDCreateDefaultMappings = 0
   let g:NERDSpaceDelims = 1
   let g:NERDShutUp = 1
   let g:VCSCommandDisableMappings = 1
-
-  if !has("gui_running")
-    let g:showmarks_enable = 0
-  endif
 
   let g:surround_45 = "<% \r %>"
   let g:surround_61 = "<%= \r %>"

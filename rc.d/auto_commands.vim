@@ -75,6 +75,7 @@ if has("autocmd")
     autocmd FileType cobol setlocal ai et sta sw=4 sts=4 tw=72 makeprg=cobc\ -x\ -Wall\ %
     autocmd FileType cs   silent! compiler cs | setlocal makeprg=gmcs\ %
     autocmd FileType css  silent! setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd Syntax css  syn sync minlines=50
     autocmd FileType gitcommit setlocal spell
     autocmd FileType gitrebase nnoremap <buffer> S :Cycle<CR>
     autocmd FileType haml let b:surround_45 = "- \r"|let b:surround_61 = "= \r"

@@ -13,6 +13,7 @@ set nocompatible
 set autoindent
 set autowrite       " Automatically save before commands like :next and :make
 set backspace=2
+set encoding=utf-8
 
 if has("balloon_eval") && has("unix")
   set ballooneval
