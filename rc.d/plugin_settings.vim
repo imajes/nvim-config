@@ -14,7 +14,7 @@ if has("eval")
   let g:ruby_debugger_progname = 'mvim'
 
   if has("gui_running")
-    let g:Powerline_theme = 'solarized'
+    "let g:Powerline_theme = 'solarized'
   endif
   let g:Powerline_symbols = 'fancy'
 
