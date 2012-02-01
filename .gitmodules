@@ -85,3 +85,6 @@
 [submodule "bundle/vim-nginx"]
 	path = bundle/vim-nginx
 	url = https://github.com/vim-scripts/nginx.vim.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
