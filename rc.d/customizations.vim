@@ -19,14 +19,18 @@ cnoreabbrev  squash %s/\s\{4\}/  /g
 cnoreabbrev  nf set nofoldenable
 "set clipboard=exclude:.*
 
-au FocusLost * :wa
+au FocusLost * silent! :wa
 "au FocusLost * :stopinsert
+"au FocusLost * let s:saved_bufhidden=&l:bufhidden | setlocal bufhidden=hide | let s:curbuf=bufnr('%') | execute "bufdo if empty(&buftype) && filereadable(@%) | write | endif" | execute 'buffer' s:curbuf | let &l:bufhidden=s:savedbufhidden
 
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 
 if has("gui_running")
-    set guioptions=egmrt
+  set guioptions=egmrt
+  " undo history
+  set undodir=~/.vim/backups
+  set undofile
 endif
 
 "if has("gui_macvim")

@@ -4,7 +4,8 @@ if has("eval")
   let g:is_bash = 1
   let g:lisp_rainbow = 1
 
-  map <unique> <silent> <Leader>r <Plug>SimpleFold_Foldsearch
+  map <unique> <Leader>r <Plug>SimpleFold_Foldsearch
+  "map <unique> <silent> <Leader>r <Plug>SimpleFold_Foldsearch
 
   " let g:rubyindent_match_parentheses = 0
   let g:ruby_minlines = 500
