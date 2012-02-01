@@ -82,3 +82,6 @@
 [submodule "bundle/vim-simplefold"]
 	path = bundle/vim-simplefold
 	url = https://github.com/pangloss/vim-simplefold
+[submodule "bundle/vim-nginx"]
+	path = bundle/vim-nginx
+	url = https://github.com/vim-scripts/nginx.vim.git
