@@ -7,6 +7,8 @@ if has("eval")
   map <unique> <Leader>r <Plug>SimpleFold_Foldsearch
   "map <unique> <silent> <Leader>r <Plug>SimpleFold_Foldsearch
 
+  let g:ruby_doc_command='open'
+
   " let g:rubyindent_match_parentheses = 0
   let g:ruby_minlines = 500
   let g:rubycomplete_buffer_loading = 1
@@ -34,9 +36,10 @@ if has("eval")
   let g:session_autosave = 1
 
   " supertab, omnicomplete
-  "filetype plugin on
-  "set ofu=syntaxcomplete#Complete
-  "let g:SuperTabDefaultCompletionType = "context"
+  filetype plugin on
+  set ofu=syntaxcomplete#Complete
+  let g:SuperTabDefaultCompletionType = "context"
+  let g:SuperTabCrMapping = 0
 
   let g:gist_clip_command = 'pbcopy'
   let g:gist_open_browser_after_post = 1

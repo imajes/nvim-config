@@ -32,7 +32,7 @@ inoremap <M-I>      <C-O>^
 inoremap <M-A>      <C-O>$
 noremap! <C-J>      <Down>
 noremap! <C-K><C-K> <Up>
-inoremap <CR>       <C-G>u<CR>
+"inoremap <CR>       <C-G>u<CR>
 if has("eval")
   command! -buffer -bar -range -nargs=? Slide :exe 'norm m`'|exe '<line1>,<line2>move'.((<q-args> < 0 ? <line1>-1 : <line2>)+(<q-args>=='' ? 1 : <q-args>))|exe 'norm ``'
 endif
