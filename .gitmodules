@@ -31,9 +31,6 @@
 [submodule "bundle/cucumber"]
 	path = bundle/cucumber
 	url = https://github.com/tpope/vim-cucumber.git
-[submodule "bundle/ruby-debugger"]
-	path = bundle/ruby-debugger
-	url = git://github.com/astashov/vim-ruby-debugger.git
 [submodule "bundle/gist-vim"]
 	path = bundle/gist-vim
 	url = https://github.com/mattn/gist-vim.git
@@ -100,3 +97,6 @@
 [submodule "bundle/html5-syntax"]
 	path = bundle/html5-syntax
 	url = git://github.com/othree/html5-syntax.vim.git
+[submodule "bundle/webapi"]
+	path = bundle/webapi
+	url = https://github.com/mattn/webapi-vim.git
