@@ -100,3 +100,6 @@
 [submodule "bundle/webapi"]
 	path = bundle/webapi
 	url = https://github.com/mattn/webapi-vim.git
+[submodule "bundle/liquid"]
+	path = bundle/liquid
+	url = https://github.com/tpope/vim-liquid.git
