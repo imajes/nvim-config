@@ -13,6 +13,7 @@ if filereadable(expand("~/.vim/rc.d/base_options.vim"))
   source ~/.vim/rc.d/customizations.vim
   source ~/.vim/rc.d/line_commenting.vim
   source ~/.vim/rc.d/web_related.vim
+  source ~/.vim/rc.d/verbosity.vim
 endif
 
 " vim:set ft=vim et tw=78 sw=2:
