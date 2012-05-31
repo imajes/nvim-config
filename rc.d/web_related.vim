@@ -17,9 +17,9 @@ autocmd FileType gem                    setlocal ft=ruby
 autocmd Syntax   css  syn sync minlines=50
 autocmd FileType css set fdm=marker fmr={,}
 
-iabbrev rd require 'ruby-debug'; Debugger.start; debugger
+iabbrev rd require 'debugger'; Debugger.start; debugger
 
-nmap <silent> <Leader>h :%s/require 'test_helper'/require File.expand_path(File.dirname(__FILE__) + "\/..\/test_helper")/g
+"nmap <silent> <Leader>h :%s/require 'test_helper'/require File.expand_path(File.dirname(__FILE__) + "\/..\/test_helper")/g
 
 " customize rails.vim
 autocmd User Rails Rnavcommand -suffix=.rb            factory    test/factories spec/factories -glob=**/* -default=model()
@@ -31,7 +31,9 @@ autocmd User Rails Rnavcommand -suffix=.coffee        coffee     app/coffeescrip
 autocmd User Rails Rnavcommand -suffix=.rb            lib        app/lib
 autocmd User Rails Rnavcommand -suffix=.feature       feature    features
 autocmd User Rails Rnavcommand -suffix=_steps.rb      steps      features/step_definitions
-
+autocmd User Rails Rnavcommand -suffix=.rb            extension  lib/extensions
+autocmd User Rails Rnavcommand -suffix=.rb            mixin      lib/mixins
+autocmd User Rails Rnavcommand -suffix=.rb            middleware lib/middleware
 
 " json stuffs...
 au! BufRead,BufNewFile *.json set filetype=json
