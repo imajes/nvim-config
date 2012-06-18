@@ -103,9 +103,6 @@
 [submodule "bundle/liquid"]
 	path = bundle/liquid
 	url = https://github.com/tpope/vim-liquid.git
-[submodule "ruby"]
-	path = bundle/ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
 [submodule "bundle/ruby"]
 	path = bundle/ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
