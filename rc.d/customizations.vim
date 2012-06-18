@@ -33,6 +33,9 @@ if has("gui_running")
   set undofile
 endif
 
+" map nerdcommenter to support cmd-/
+vmap <silent> <D-/> :call NERDComment("n", "Toggle")<CR>
+
 "if has("gui_macvim")
 "    macmenu &File.New\ Tab key=<nop>
 "    map <D-t> <Plug>PeepOpen

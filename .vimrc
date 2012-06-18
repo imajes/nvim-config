@@ -11,7 +11,6 @@ if filereadable(expand("~/.vim/rc.d/base_options.vim"))
   source ~/.vim/rc.d/auto_commands.vim
   source ~/.vim/rc.d/mappings.vim
   source ~/.vim/rc.d/customizations.vim
-  source ~/.vim/rc.d/line_commenting.vim
   source ~/.vim/rc.d/web_related.vim
   source ~/.vim/rc.d/verbosity.vim
 endif
