@@ -20,6 +20,9 @@ if has("eval")
   endif
   let g:Powerline_symbols = 'fancy'
 
+  " hide hidden buffers from the session
+  set sessionoptions-=buffers
+
   let g:NERDCreateDefaultMappings = 0
   let g:NERDSpaceDelims = 1
   let g:NERDShutUp = 1
