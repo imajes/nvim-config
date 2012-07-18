@@ -1,14 +1,16 @@
 " Section: Mappings
 " ----------------------
 
-nmap <silent> <Leader>g :!/usr/local/bin/ctags -R --languages=Ruby,C,C++ -f .tags --langmap='ruby:+.rake.builder.haml'<CR>
+nmap <silent> <Leader>g :!/usr/local/bin/ctags -f .tags --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* --extra=+f --langmap='ruby:+.rake.builder.haml'<CR><CR>
 
 map Y       y$
 " Don't use Ex mode; use Q for formatting
 map Q       gqj
+
 if exists(":nohls")
   nnoremap <silent> <C-L> :nohls<CR><C-L>
 endif
+
 inoremap <C-C> <Esc>`^
 nnoremap zS  r<CR>ddkP=j
 
@@ -88,7 +90,7 @@ map <C-F4>  :bdelete<CR>
 noremap  <S-Insert> <MiddleMouse>
 noremap! <S-Insert> <MiddleMouse>
 
-map \\              <Plug>NERDCommenterInvert
+"map \\              <Plug>NERDCommenterInvert
 map <Leader>l       <Plug>CapsLockToggle
 imap <C-L>          <Plug>CapsLockToggle
 imap <C-G>c         <Plug>CapsLockToggle

@@ -26,6 +26,14 @@ au FocusLost * silent! :wa
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 
+" completions, from http://robots.thoughtbot.com/post/27041742805/vim-you-complete-me
+set complete=.,b,u,]
+set wildmode=longest,list:longest
+set completeopt=menu,preview
+
+" lets also run ctags every time we lose focus, as we want to keep this file current
+au FocusLost * silent! :!/usr/local/bin/ctags -a -f .tags --exclude=.git --exclude=log -R * --extra=+f --langmap='ruby:+.rake.builder.haml'
+
 if has("gui_running")
   set guioptions=egmrt
   " undo history
