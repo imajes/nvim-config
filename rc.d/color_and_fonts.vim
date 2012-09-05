@@ -2,11 +2,11 @@
 " --------------------
 
 if has("gui_running")
-  "set guifont=inconsolata-dz:h12
-  set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12:h12
+  set guifont=inconsolata-dz:h12
+  "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12:h12
   "set guifont=Inconsolata-dz\ for\ Powerline:h14
   set transparency=2
-  colorscheme candycode
+  colorscheme Tomorrow-Night
 else
   colorscheme Tomorrow-Night
 endif
