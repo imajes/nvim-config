@@ -8,6 +8,7 @@ if has("gui_running")
   set guifont=Source\ Code\ Pro\ Light\ for\ Powerline:h12
   set transparency=2
   colorscheme Tomorrow-Night-Blue
+  highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 else
   colorscheme Tomorrow-Night
 endif
