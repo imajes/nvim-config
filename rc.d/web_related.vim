@@ -13,6 +13,8 @@ autocmd FileType ruby                   setlocal comments=:#\  tw=79
 autocmd FileType sh,csh,zsh             setlocal et sw=2 sts=2
 autocmd FileType vim                    setlocal et sw=2 sts=2 keywordprg=:help
 autocmd FileType gem                    setlocal ft=ruby
+autocmd FileType php                    setlocal et sw=2 sts=2 noet
+autocmd FileType ant                    setlocal et sw=2 sts=2 noet
 
 autocmd Syntax   css  syn sync minlines=50
 autocmd FileType css set fdm=marker fmr={,}
