@@ -1,6 +1,6 @@
 " ~/.vim/.vimrc !
 
-source vundle_config.vim
+source ~/.vim/vundle_config.vim
 
 if filereadable(expand("~/.vim/rc.d/base_options.vim"))
   runtime! rc.d/**.vim

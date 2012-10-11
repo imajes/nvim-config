@@ -55,4 +55,5 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'tpope/vim-ragtag'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'wincent/Command-T'
 
