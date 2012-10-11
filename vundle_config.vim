@@ -57,5 +57,5 @@ Bundle 'gmarik/sudo-gui.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'wincent/Command-T'
 Bundle 'spf13/PIV'
-"Bundle 'shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache'
 
