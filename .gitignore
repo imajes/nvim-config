@@ -3,3 +3,6 @@ sessions
 oldrc
 log
 .tags
+
+# ignore stuff from vundle
+bundle/*
