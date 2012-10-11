@@ -53,3 +53,6 @@ Bundle 'nono/vim-handlebars'
 Bundle 'vim-scripts/candycode.vim'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'tpope/vim-ragtag'
+Bundle 'gmarik/sudo-gui.vim'
+Bundle 'kien/ctrlp.vim'
+
