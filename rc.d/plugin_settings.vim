@@ -15,6 +15,8 @@ if has("eval")
   let g:rubycomplete_rails = 1
   let g:ruby_debugger_progname = 'mvim'
 
+  let g:neocomplcache_enable_at_startup = 1
+
   if has("gui_running")
     "let g:Powerline_theme = 'solarized'
   endif
