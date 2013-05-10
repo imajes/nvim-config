@@ -88,6 +88,8 @@ if has("autocmd")
     autocmd FileType pdf  setlocal foldmethod=syntax foldlevel=1 | if !exists("b:current_syntax") | setlocal syntax=postscr | endif
     autocmd FileType python setlocal keywordprg=pydoc
     autocmd FileType ruby silent! compiler ruby | setlocal tw=79 isfname+=: makeprg=rake keywordprg=ri comments=:#\  | let &includeexpr = 'tolower(substitute(substitute('.&includeexpr.',"\\(\\u\\+\\)\\(\\u\\l\\)","\\1_\\2","g"),"\\(\\l\\|\\d\\)\\(\\u\\)","\\1_\\2","g"))' | imap <buffer> <C-Z> <CR>end<C-O>O
+    " the ballonexpr for ruby sucks: large and irrelevant :(
+    autocmd FileType ruby setlocal balloonexpr=RubyBalloonexpr()
     autocmd FileType sql map! <buffer> <C-Z> <Esc>`^gUaw`]a
     autocmd FileType text,txt setlocal tw=78 linebreak nolist
 

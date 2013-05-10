@@ -83,7 +83,7 @@ map <F3>    :cnext<CR>
 map <F4>    :cc<CR>
 map <F5>    :cprev<CR>
 map <F8>    :wa<Bar>make<CR>
-map <silent> <F10>   :let tagsfile = tempname()\|silent exe "!ctags -f ".tagsfile." \"%\""\|let &l:tags .= "," . tagsfile\|unlet tagsfile<CR>
+map <silent> <F10>   :let tagsfile = tempname()\|silent exe "!ctags -f ".tags" \"%\""\|let &l:tags .= "," . tags\|unlet tagsfile<CR>
 map <silent> <F11> :if exists(":BufExplorer")<Bar>exe "BufExplorer"<Bar>else<Bar>buffers<Bar>endif<CR>
 map <C-F4>  :bdelete<CR>
 

@@ -58,4 +58,13 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'wincent/Command-T'
 Bundle 'spf13/PIV'
 "Bundle 'Shougo/neocomplcache'
+Bundle 'jeroenbourgois/vim-actionscript'
+"Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+"Bundle "honza/snipmate-snippets"
+"Bundle 'garbas/vim-snipmate'
+"Bundle 'rcyrus/snipmate-snippets-rubymotion'
+Bundle 'sophacles/vim-processing'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'terryma/vim-multiple-cursors'
 
