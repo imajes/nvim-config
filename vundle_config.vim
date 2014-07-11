@@ -70,3 +70,8 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'rizzatti/dash.vim'
 Bundle 'chrisbra/Colorizer'
 Bundle "Lokaltog/vim-easymotion"
+Bundle 'micha/grb256'
+Bundle 'vim-scripts/corporation'
+Bundle 'Lokaltog/vim-distinguished'
+Bundle 'nanotech/jellybeans.vim'
+
