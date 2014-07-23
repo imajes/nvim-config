@@ -3,7 +3,7 @@
 
 if exists("g:vundle_install_plugin")
   Plugin 'vim-scripts/nginx.vim'
-  Plugin "ekalinin/Dockerfile.vim"
+  Plugin 'ekalinin/Dockerfile.vim'
 
   finish
 endif

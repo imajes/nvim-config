@@ -3,7 +3,7 @@
 
 if exists("g:vundle_install_plugin")
   " Vim motions on speed!
-  Plugin "Lokaltog/vim-easymotion"
+  Plugin 'Lokaltog/vim-easymotion'
 
   " Graph your Vim undo tree in style. - undo tree
   Plugin 'sjl/gundo.vim'
