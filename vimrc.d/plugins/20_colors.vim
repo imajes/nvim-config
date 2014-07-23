@@ -1,6 +1,17 @@
-" Section: Visual
-" --------------------
+" Section: Visual, Colors
+" ------------------------
 
+if exists("g:vundle_install_plugin")
+  Plugin 'altercation/vim-colors-solarized'
+  Plugin 'vim-scripts/candycode.vim'
+  Plugin 'chriskempson/vim-tomorrow-theme'
+  Plugin 'vim-scripts/corporation'
+  Plugin 'Lokaltog/vim-distinguished'
+  Plugin 'nanotech/jellybeans.vim'
+  Plugin 'micha/grb256'
+  Plugin 'morhetz/gruvbox'
+  finish
+endif
 
 if has("gui_running")
   "set guifont=inconsolata-dz:h12
@@ -12,6 +23,7 @@ if has("gui_running")
   colorscheme codeschool
   " highlight LineNr guifg=#efefef
 else
+  let g:solarized_termcolors=256
   set background=dark
   colorscheme distinguished
 endif
