@@ -39,16 +39,17 @@ if has("eval")
 
 
   " customize rails.vim
-  autocmd User Rails Rnavcommand -suffix=.rb            factory    spec/factories -glob=**/* -default=model()
-  autocmd User Rails Rnavcommand -suffix=_job.rb        job        app/jobs
-  autocmd User Rails Rnavcommand -suffix=.sass          sass       app/assets/stylesheets vendor/assets/stylesheets lib/assets/stylesheets
-  autocmd User Rails Rnavcommand -suffix=.coffee        coffee     app/assets/javascripts vendor/assets/javascripts lib/assets/javascripts
-  autocmd User Rails Rnavcommand -suffix=.rb            lib        app/lib -glob=**/*
-  autocmd User Rails Rnavcommand -suffix=.feature       feature    features
-  autocmd User Rails Rnavcommand -suffix=_steps.rb      steps      features/step_definitions
-  autocmd User Rails Rnavcommand -suffix=.rb            extension  lib/extensions
-  autocmd User Rails Rnavcommand -suffix=.rb            mixin      lib/mixins
-  autocmd User Rails Rnavcommand -suffix=.rb            middleware lib/middleware
+  autocmd User Rails Rnavcommand -suffix=.rb        factory    spec/factories -glob=**/* -default=model()
+  autocmd User Rails Rnavcommand -suffix=.rb        job        app/jobs -glob=**/*
+  autocmd User Rails Rnavcommand -suffix=.sass      sass       app/assets/stylesheets vendor/assets/stylesheets lib/assets/stylesheets -glob=**/*
+  autocmd User Rails Rnavcommand -suffix=.scss      sass       app/assets/stylesheets vendor/assets/stylesheets lib/assets/stylesheets -glob=**/*
+  autocmd User Rails Rnavcommand -suffix=.coffee    coffee     app/assets/javascripts vendor/assets/javascripts lib/assets/javascripts -glob=**/*
+  autocmd User Rails Rnavcommand -suffix=.rb        lib        app/lib -glob=**/*
+  autocmd User Rails Rnavcommand -suffix=.feature   feature    features -glob=**/*
+  autocmd User Rails Rnavcommand -suffix=_steps.rb  steps      features/step_definitions -glob=**/*
+  autocmd User Rails Rnavcommand -suffix=.rb        extension  lib/extensions -glob=**/*
+  autocmd User Rails Rnavcommand -suffix=.rb        mixin      lib/mixins -glob=**/*
+  autocmd User Rails Rnavcommand -suffix=.rb        middleware lib/middleware -glob=**/*
 
   "strip trailing whitespace on save for code files
   autocmd BufWritePre *.rb,*.yml,*.js,*.css,*.less,*.sass,*.html,*.xml,*.erb,*.haml,*.slim,*.scss,*.json,*.coffeescript :%s/\s\+$//e

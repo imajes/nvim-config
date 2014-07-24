@@ -6,7 +6,9 @@ if exists("g:vundle_install_plugin")
   Plugin 'kien/ctrlp.vim'
 
   Plugin 'scrooloose/nerdtree'
-  Plugin 'git://git.wincent.com/command-t.git'
+  
+  " this seems to potentially have issues with ruby invocation
+  "Plugin 'git://git.wincent.com/command-t.git'
 
   finish
 endif
