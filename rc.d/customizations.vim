@@ -32,7 +32,7 @@ set wildmode=longest,list:longest
 set completeopt=menu,preview
 
 " lets also run ctags every time we lose focus, as we want to keep this file current
-au FocusLost * silent! :!/usr/local/bin/ctags -a -f .tags --exclude=.git --exclude=log -R * --extra=+f --langmap='ruby:+.rake.builder.haml'
+au FocusLost * :!/usr/local/bin/ctags 
 
 if has("gui_running")
   set guioptions=egmrt
@@ -49,41 +49,3 @@ endif
 "    map <D-t> <Plug>PeepOpen
 "end
 
-" SHORTCUT KEY MAPPINGS """""""""""""""""""
-" from Sam Coward
-" https://github.com/idoru/idoru-vim-config/blob/master/vimrc_template
-"
-"prev/next in quickfix file listing (e.g. search results)
-map <M-D-Down> :cn<CR>
-map <M-D-Up> :cp<CR>
-
-"select open file, MRU sorted
-map <D-e> :FufBuffer<CR>
-
-"open file
-map <D-N> :FufFile<CR>
-
-"opt-cmd-arrows [next & previous open files]
-map <M-D-Left> :bp<CR>
-map <M-D-Right> :bn<CR>
-
-"indent/unindent visual mode selection with tab/shift+tab
-vmap <tab> >gv
-vmap <s-tab> <gv
-
-"Undo/Redo using undo tree with cmd-z/cmd-shift-z
-map <D-z> :earlier 1<CR>
-map <D-Z> :later 1<CR>
-
-"file tree browser - backslash
-map \ :NERDTreeToggle<CR>
-
-" from vimcasts.org
-"
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-nmap gV `[v`]
