@@ -1,3 +1,6 @@
+" Section: Vim, Verbose Logging
+" ------------------------------
+
 function! ToggleVerbose()
   if !&verbose
     set verbosefile=~/.vim/log/verbose.log

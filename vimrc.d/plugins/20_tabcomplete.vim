@@ -25,4 +25,9 @@ if has("eval")
 
   autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
   autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
+
+  " completions, from http://robots.thoughtbot.com/post/27041742805/vim-you-complete-me
+  set complete=.,b,u,]
+  set wildmode=longest,list:longest
+  set completeopt=menu,preview
 endif

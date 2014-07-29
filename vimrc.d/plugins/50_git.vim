@@ -17,5 +17,6 @@ if has("eval")
   let g:gist_open_browser_after_post = 1
   let g:gist_detect_filetype = 1
 
+  set grepprg=git\ grep\ -niH\ $*
 endif
 

@@ -23,11 +23,6 @@ if filereadable(expand("~/.vim/after.vimrc"))
   source ~/.vim/after.vimrc
 endif
 
-" other local customizations
-if filereadable(expand("~/.vim/rc.d/base_options.vim"))
-  runtime! rc.d/**.vim
-endif
-
 " log everything!
 ":call ToggleVerbose()
 

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export SN=$(basename $(pwd))
+
+if [ $# == 0 ]; then
+	mvim --servername $SN
+else
+	mvim --servername $SN --remote-tab-silent "$@" 
+	# 1>/dev/null 2>&1
+fi

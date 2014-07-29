@@ -3,6 +3,8 @@ sessions
 oldrc
 log
 .tags
+*.swp
+*.*.swp
 
 # ignore stuff from vundle
 bundle/*
