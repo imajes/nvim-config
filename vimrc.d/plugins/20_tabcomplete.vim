@@ -22,4 +22,7 @@ if has("eval")
   " let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
   " let g:SuperTabContextDiscoverDiscovery =
   "       \ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+
+  autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
+  autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
 endif

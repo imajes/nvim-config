@@ -32,6 +32,8 @@ if has("eval")
   " automap for filetypes
   autocmd BufNewFile,BufRead *.haml             set ft=haml
   autocmd BufNewFile,BufRead *.feature,*.story  set ft=cucumber
+  autocmd BufNewFile,BufRead *.erb set ft=eruby
+
   autocmd FileType gem                    setlocal ft=ruby
   autocmd FileType eruby,yaml,ruby        setlocal et sw=2 sts=2
   autocmd FileType cucumber               setlocal et sw=2 sts=2
@@ -58,6 +60,9 @@ if has("eval")
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
   autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
   autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
+  " the ballonexpr for ruby sucks: large and irrelevant :(
+  "autocmd FileType ruby setlocal balloonexpr=RubyBalloonexpr()
 
   let g:ruby_doc_command='open'
 
