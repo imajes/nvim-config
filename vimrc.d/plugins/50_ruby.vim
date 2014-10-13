@@ -39,19 +39,67 @@ if has("eval")
   autocmd FileType cucumber               setlocal et sw=2 sts=2
   autocmd FileType ruby                   setlocal comments=:#\  tw=79
 
+  " custom commands for rails vim
+  command! Eroutes Einitializer
+  command! Egemfile edit Gemfile
+  command! Ereadme edit README.md
 
-  " customize rails.vim
-  autocmd User Rails Rnavcommand -suffix=.rb        factory    spec/factories -glob=**/* -default=model()
-  autocmd User Rails Rnavcommand -suffix=.rb        job        app/jobs -glob=**/*
-  autocmd User Rails Rnavcommand -suffix=.sass      sass       app/assets/stylesheets vendor/assets/stylesheets lib/assets/stylesheets -glob=**/*
-  autocmd User Rails Rnavcommand -suffix=.scss      sass       app/assets/stylesheets vendor/assets/stylesheets lib/assets/stylesheets -glob=**/*
-  autocmd User Rails Rnavcommand -suffix=.coffee    coffee     app/assets/javascripts vendor/assets/javascripts lib/assets/javascripts -glob=**/*
-  autocmd User Rails Rnavcommand -suffix=.rb        lib        app/lib -glob=**/*
-  autocmd User Rails Rnavcommand -suffix=.feature   feature    features -glob=**/*
-  autocmd User Rails Rnavcommand -suffix=_steps.rb  steps      features/step_definitions -glob=**/*
-  autocmd User Rails Rnavcommand -suffix=.rb        extension  lib/extensions -glob=**/*
-  autocmd User Rails Rnavcommand -suffix=.rb        mixin      lib/mixins -glob=**/*
-  autocmd User Rails Rnavcommand -suffix=.rb        middleware lib/middleware -glob=**/*
+  " rails projections
+  let g:rails_projections = {
+        \ "config/projections.json": {
+        \   "command": "projections"
+        \ },
+        \ "app/jobs/*.rb": {
+        \   "command":   "job",
+        \   "affinity":  "model",
+        \   "alternate": "app/models/%i.rb",
+        \   "related":   "db/schema.rb#%s",
+        \   "test":      "spec/jobs/%i_spec.rb",
+        \   "template": "class %SJob\n\rinclude Sidekiq::Worker\n\n\r@queue = :%i\n\n\rdef perform()\n\rend\nend",
+        \   "keywords":  "async job sequence"
+        \ },
+        \ "test/factories/*.rb": {
+        \   "command":   "factory",
+        \   "affinity":  "collection",
+        \   "alternate": "app/models/%i.rb",
+        \   "related":   "db/schema.rb#%s",
+        \   "test":      "test/models/%i_test.rb",
+        \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+        \   "keywords":  "factory sequence"
+        \ },
+        \ "spec/factories/*.rb": {
+        \   "command":   "factory",
+        \   "affinity":  "collection",
+        \   "alternate": "app/models/%i.rb",
+        \   "related":   "db/schema.rb#%s",
+        \   "test":      "spec/models/%i_spec.rb",
+        \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+        \   "keywords":  "factory sequence"
+        \ },
+        \ "spec/features/*_spec.rb": {
+        \   "command": "feature",
+        \   "template": "require 'spec_helper'\n\nfeature '%h' do\n\nend",
+        \ }}
+
+  let g:rails_gem_projections = {
+        \ "active_model_serializers": {
+        \   "app/serializers/*_serializer.rb": {
+        \     "command": "serializer",
+        \     "affinity": "model",
+        \     "test": "spec/serializers/%s_spec.rb",
+        \     "related": "app/models/%s.rb",
+        \     "template": "class %SSerializer < ActiveModel::Serializer\nend"
+        \   }
+        \ },
+        \ "draper": {
+        \   "app/decorators/*_decorator.rb": {
+        \     "command": "decorator",
+        \     "affinity": "model",
+        \     "test": "spec/decorators/%s_spec.rb",
+        \     "related": "app/models/%s.rb",
+        \     "template": "class %SDecorator < Draper::Decorator\nend"
+        \   }
+        \ }}
 
   "strip trailing whitespace on save for code files
   autocmd BufWritePre *.rb,*.yml,*.js,*.css,*.less,*.sass,*.html,*.xml,*.erb,*.haml,*.slim,*.scss,*.json,*.coffeescript :%s/\s\+$//e

@@ -81,6 +81,7 @@ set winaltkeys=no
 if v:version >= 600
   set autoread
   set foldmethod=marker
+  set foldlevel=3
   set printoptions=paper:letter
   set sidescrolloff=5
   set mouse=nvi

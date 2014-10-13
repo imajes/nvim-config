@@ -10,7 +10,7 @@ endif
 
 if has("eval")
   let g:session_autoload = 'yes'
-  let g:session_default_to_last = 'yes'
+  let g:session_default_to_last = 'no'
   let g:session_autosave = 'yes'
 
   " hide hidden buffers from the session

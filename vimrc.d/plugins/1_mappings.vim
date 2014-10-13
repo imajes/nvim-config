@@ -10,4 +10,8 @@ imap <C-a> <esc>0i
 nmap <C-e> $
 " map CTRL-A to beginning-of-line (normal mode)
 nmap <C-a> 0
+" map tab to indent (visual mode), gv preserves highlights
+vmap <Tab> >gv
+" map back tab to indent (visual mode), gv preserves highlights
+vmap <S-Tab> <gv
 

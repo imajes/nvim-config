@@ -27,6 +27,6 @@ if has("eval")
   let g:surround_{char2nr('s')} = " \r"
   let g:surround_indent = 1
 
-  map <unique> <Leader>r <Plug>SimpleFold_Foldsearch
+  map <unique> <Leader>f <Plug>SimpleFold_Foldsearch
   "map <unique> <silent> <Leader>r <Plug>SimpleFold_Foldsearch
 endif
