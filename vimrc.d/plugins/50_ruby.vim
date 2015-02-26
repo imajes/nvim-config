@@ -49,14 +49,23 @@ if has("eval")
         \ "config/projections.json": {
         \   "command": "projections"
         \ },
-        \ "app/jobs/*.rb": {
+        \ "app/jobs/*_job.rb": {
         \   "command":   "job",
         \   "affinity":  "model",
-        \   "alternate": "app/models/%i.rb",
+        \   "alternate": "spec/jobs/%i_job_spec.rb",
         \   "related":   "db/schema.rb#%s",
-        \   "test":      "spec/jobs/%i_spec.rb",
-        \   "template": "class %SJob\n\rinclude Sidekiq::Worker\n\n\r@queue = :%i\n\n\rdef perform()\n\rend\nend",
+        \   "test":      "spec/jobs/%i_job_spec.rb",
+        \   "template": "class %SJob\n  include Sidekiq::Worker\n\n  @queue = :%i\n\n  def perform()\n  end\nend",
         \   "keywords":  "async job sequence"
+        \ },
+        \ "app/services/*_service.rb": {
+        \   "command":   "service",
+        \   "affinity":  "model",
+        \   "alternate": "spec/services/%i_service_spec.rb",
+        \   "related":   "db/schema.rb#%s",
+        \   "test":      "spec/services/%i_service_spec.rb",
+        \   "template": "class %SService\n  def initialize()\n  end\nend",
+        \   "keywords": "service extraction sequence"
         \ },
         \ "test/factories/*.rb": {
         \   "command":   "factory",
@@ -110,7 +119,7 @@ if has("eval")
   autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
   " the ballonexpr for ruby sucks: large and irrelevant :(
-  "autocmd FileType ruby setlocal balloonexpr=RubyBalloonexpr()
+  autocmd FileType ruby setlocal noballooneval
 
   let g:ruby_doc_command='open'
 

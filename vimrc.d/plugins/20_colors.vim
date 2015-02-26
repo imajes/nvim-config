@@ -14,13 +14,11 @@ if exists("g:vundle_install_plugin")
 endif
 
 if has("gui_running")
-  "set guifont=inconsolata-dz:h12
-  "set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12:h12
-  "set guifont=Inconsolata-dz\ for\ Powerline:h14
   set background=dark
-  set guifont=Source\ Code\ Pro\ Light\ for\ Powerline:h12
+  " set guifont=Source\ Code\ Pro\ Light\ for\ Powerline:h12
+  set guifont=Sauce\ Code\ Powerline\ Light:h11
   set transparency=2
-  colorscheme codeschool
+  colorscheme Tomorrow-Night-Eighties
   " highlight LineNr guifg=#efefef
 else
   let g:solarized_termcolors=256
