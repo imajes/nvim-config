@@ -62,8 +62,6 @@ endif
 
 set splitbelow      " Split windows at bottom
 set suffixes+=.dvi  " Lower priority in wildcards
-set tags+=./.tags,../.tags,../../.tags,../../../.tags,../../../../.tags
-
 set timeoutlen=1200 " A little bit more time for macros
 set ttimeoutlen=50  " Make Esc work faster
 

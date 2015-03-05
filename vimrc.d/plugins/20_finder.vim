@@ -15,6 +15,9 @@ endif
 
 if has("eval")
 
+  nnoremap <leader>. :CtrlPTag<cr>
+  let g:ctrlp_switch_buffer = 'Et'
+
   let g:NERDCreateDefaultMappings = 0
   let g:NERDSpaceDelims = 1
   let g:NERDShutUp = 1

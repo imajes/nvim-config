@@ -19,10 +19,6 @@ if has("eval")
   " prevent folds for buffer
   cnoreabbrev  nf set nofoldenable
 
-  " Run ctags every time we lose focus, as we want to keep this file current
-  "au FocusLost * silent! :!/usr/local/bin/ctags
-  nmap <silent> <Leader>g :!/usr/local/bin/ctags<CR><CR>
-
   "let &listchars="tab:\<M-;>\<M-7>,trail:\<M-7>"
   set listchars=tab:>\ ,trail:-
   set listchars+=extends:>,precedes:<
