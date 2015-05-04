@@ -5,6 +5,7 @@ if exists("g:vundle_install_plugin")
   Plugin 'othree/html5-syntax.vim'
   Plugin 'mattn/webapi-vim'
   Plugin 'othree/html5.vim'
+  Plugin 'groenewege/vim-less'
 
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'tpope/vim-haml'
