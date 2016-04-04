@@ -3,7 +3,7 @@
 " helpful: https://github.com/majutsushi/tagbar/wiki
 
 if exists("g:vundle_install_plugin")
-  Plugin 'majutsushi/tagbar'
+  "Plugin 'majutsushi/tagbar'
   Plugin 'ludovicchabant/vim-gutentags'
   finish
 endif

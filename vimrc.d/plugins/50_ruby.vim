@@ -58,12 +58,12 @@ if has("eval")
         \   "template": "class %SJob\n  include Sidekiq::Worker\n\n  @queue = :%i\n\n  def perform()\n  end\nend",
         \   "keywords":  "async job sequence"
         \ },
-        \ "app/services/*_service.rb": {
+        \ "app/services/*.rb": {
         \   "command":   "service",
         \   "affinity":  "model",
-        \   "alternate": "spec/services/%i_service_spec.rb",
+        \   "alternate": "spec/services/%i_spec.rb",
         \   "related":   "db/schema.rb#%s",
-        \   "test":      "spec/services/%i_service_spec.rb",
+        \   "test":      "spec/services/%i_spec.rb",
         \   "template": "class %SService\n  def initialize()\n  end\nend",
         \   "keywords": "service extraction sequence"
         \ },

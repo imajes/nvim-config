@@ -17,6 +17,8 @@ if has("gui_running")
   set background=dark
   " set guifont=Source\ Code\ Pro\ Light\ for\ Powerline:h12
   set guifont=Sauce\ Code\ Powerline\ Light:h11
+  "set guifont=Fira\ Code:h11
+  "set macligatures
   set transparency=2
   colorscheme Tomorrow-Night-Eighties
   " highlight LineNr guifg=#efefef
