@@ -35,9 +35,9 @@ if has("eval")
   autocmd BufNewFile,BufRead *.erb set ft=eruby
 
   autocmd FileType gem                    setlocal ft=ruby
-  autocmd FileType eruby,yaml,ruby        setlocal et sw=2 sts=2
-  autocmd FileType cucumber               setlocal et sw=2 sts=2
-  autocmd FileType ruby                   setlocal comments=:#\  tw=79
+  autocmd FileType eruby,yaml,ruby        setlocal et ts=2 sw=2 sts=2 expandtab list listchars=tab:»·,trail:· 
+  autocmd FileType cucumber               setlocal et ts=2 sw=2 sts=2 expandtab
+  autocmd FileType ruby                   setlocal comments=:#\  tw=80
 
   " custom commands for rails vim
   command! Eroutes Einitializer
@@ -49,12 +49,12 @@ if has("eval")
         \ "config/projections.json": {
         \   "command": "projections"
         \ },
-        \ "app/jobs/*_job.rb": {
-        \   "command":   "job",
+        \ "app/workers/*_worker.rb": {
+        \   "command":   "worker",
         \   "affinity":  "model",
-        \   "alternate": "spec/jobs/%i_job_spec.rb",
+        \   "alternate": "spec/workers/%i_worker_spec.rb",
         \   "related":   "db/schema.rb#%s",
-        \   "test":      "spec/jobs/%i_job_spec.rb",
+        \   "test":      "spec/jobs/%i_worker_spec.rb",
         \   "template": "class %SJob\n  include Sidekiq::Worker\n\n  @queue = :%i\n\n  def perform()\n  end\nend",
         \   "keywords":  "async job sequence"
         \ },

@@ -25,7 +25,7 @@ if has("eval")
   \ }
 
   nnoremap <silent> <Leader>b :TagbarToggle<CR>
-  let g:gutentags_tagfile = '.tags'
+  let g:gutentags_ctags_tagfile = '.tags'
   "au FocusLost * exe :GutentagsUpdate
 
   " set tags=./.tags

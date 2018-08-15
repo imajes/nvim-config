@@ -8,8 +8,8 @@ if exists("g:vundle_install_plugin")
   finish
 endif
 
-let g:session_autoload = 'yes'
-let g:session_default_to_last = 1
+let g:session_autoload = 'no'
+let g:session_default_to_last = 'no'
 let g:session_autosave = 'yes'
 
 " use vim settings, not session
