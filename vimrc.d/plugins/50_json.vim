@@ -1,11 +1,7 @@
 " Section: Language, JSON
 " -----------------------------
 
-if exists("g:vundle_install_plugin")
-  Plugin 'elzr/vim-json'
-
-  finish
-endif
+Plug 'elzr/vim-json'
 
 " json stuffs...
 au! BufRead,BufNewFile *.json set filetype=json

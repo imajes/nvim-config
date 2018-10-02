@@ -2,32 +2,27 @@
 " ------------------------------
 " helpful: https://github.com/majutsushi/tagbar/wiki
 
-if exists("g:vundle_install_plugin")
-  "Plugin 'majutsushi/tagbar'
-  Plugin 'ludovicchabant/vim-gutentags'
-  finish
-endif
+"Plug 'majutsushi/tagbar'
+"Plug 'ludovicchabant/vim-gutentags'
 
-if has("eval")
-  " Run ctags every time we lose focus, as we want to keep this file current
-  "au FocusLost * silent! :!/usr/local/bin/ctags
-  " nmap <silent> <Leader>g :!/usr/local/bin/ctags<CR><CR>
+" Run ctags every time we lose focus, as we want to keep this file current
+"au FocusLost * silent! :!/usr/local/bin/ctags
+" nmap <silent> <Leader>g :!/usr/local/bin/ctags<CR><CR>
 
-  let g:tagbar_type_ruby = {
+let g:tagbar_type_ruby = {
       \ 'kinds' : [
-          \ 'm:modules',
-          \ 'c:classes',
-          \ 'd:describes',
-          \ 'C:contexts',
-          \ 'f:methods',
-          \ 'F:singleton methods'
+      \ 'm:modules',
+      \ 'c:classes',
+      \ 'd:describes',
+      \ 'C:contexts',
+      \ 'f:methods',
+      \ 'F:singleton methods'
       \ ]
-  \ }
+      \ }
 
-  nnoremap <silent> <Leader>b :TagbarToggle<CR>
-  let g:gutentags_ctags_tagfile = '.tags'
-  "au FocusLost * exe :GutentagsUpdate
+"nnoremap <silent> <Leader>b :TagbarToggle<CR>
+let g:gutentags_ctags_tagfile = '.tags'
+"au FocusLost * exe :GutentagsUpdate
 
-  " set tags=./.tags
-endif
+" set tags=./.tags
 

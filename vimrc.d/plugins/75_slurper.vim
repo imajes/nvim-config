@@ -4,9 +4,5 @@
 " tracker
 
 
-if exists("g:vundle_install_plugin")
-  Plugin 'adamlowe/vim-slurper'
-
-  finish
-endif
+Plug 'adamlowe/vim-slurper'
 

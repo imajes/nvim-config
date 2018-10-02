@@ -1,14 +1,9 @@
 " Section: Language, JSON
 " -----------------------------
 
-if exists("g:vundle_install_plugin")
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'mxw/vim-jsx'
-  Plugin 'mattn/emmet-vim'
-
-  finish
-endif
-
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
 
 " clean expander
 let g:user_emmet_leader_key='<Tab>'

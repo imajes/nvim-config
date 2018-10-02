@@ -1,12 +1,8 @@
 " Section: Language, Configs
 " -----------------------------
 
-if exists("g:vundle_install_plugin")
-  Plugin 'vim-scripts/nginx.vim'
-  Plugin 'ekalinin/Dockerfile.vim'
-
-  finish
-endif
+Plug 'vim-scripts/nginx.vim'
+Plug 'ekalinin/Dockerfile.vim'
 
 autocmd FileType sh,csh,zsh             setlocal et sw=2 sts=2
 autocmd FileType vim                    setlocal et sw=2 sts=2 keywordprg=:help

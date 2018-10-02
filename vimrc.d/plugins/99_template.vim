@@ -1,7 +1,7 @@
 " Section: Vim, 
 " ------------------------
 
-if exists("g:vundle_install_plugin")
+if exists("g:eval")
 
   finish
 endif

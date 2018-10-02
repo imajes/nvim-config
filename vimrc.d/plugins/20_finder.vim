@@ -1,17 +1,14 @@
 " Section: Vim, File Tree
 " -------------------------
 
-if exists("g:vundle_install_plugin")
-  " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
-  Plugin 'kien/ctrlp.vim'
+" Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+Plug 'kien/ctrlp.vim'
 
-  Plugin 'scrooloose/nerdtree'
-  
-  " this seems to potentially have issues with ruby invocation
-  "Plugin 'git://git.wincent.com/command-t.git'
+Plug 'scrooloose/nerdtree'
 
-  finish
-endif
+" this seems to potentially have issues with ruby invocation
+"Plug 'git://git.wincent.com/command-t.git'
+
 
 if has("eval")
 
@@ -23,4 +20,5 @@ if has("eval")
   let g:NERDShutUp = 1
   let g:VCSCommandDisableMappings = 1
 
+  finish
 endif

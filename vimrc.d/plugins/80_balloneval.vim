@@ -2,7 +2,7 @@
 " ------------------------
 
 " balloon eval in ruby is really annoying
-if has("gui_running")
+if has("balloon_eval")
 "  setglobal noballooneval
   set nobeval
 endif

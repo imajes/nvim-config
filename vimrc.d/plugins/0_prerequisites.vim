@@ -1,14 +1,10 @@
 " Section: Vim, Prereqs
 " ------------------------
 
-if exists("g:vundle_install_plugin")
-  Plugin 'kana/vim-textobj-user'
-  Plugin 'xolox/vim-misc'
-  " Plugin "MarcWeber/vim-addon-mw-utils"
-  Plugin 'tomtom/tlib_vim'
+Plug 'kana/vim-textobj-user'
+Plug 'xolox/vim-misc'
+" Plug "MarcWeber/vim-addon-mw-utils"
+Plug 'tomtom/tlib_vim'
 
-  " repeat.vim: enable repeating supported plugin maps with
-  Plugin 'tpope/vim-repeat'
-
-  finish
-endif
+" repeat.vim: enable repeating supported Plug maps with
+Plug 'tpope/vim-repeat'

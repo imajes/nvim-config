@@ -1,23 +1,20 @@
 " Section: Vim, Quote & Fold
 " ----------------------------
 
-if exists("g:vundle_install_plugin")
-  " surround.vim: quoting/parenthesizing made simple
-  Plugin 'tpope/vim-surround'
+" surround.vim: quoting/parenthesizing made simple
+Plug 'tpope/vim-surround'
 
-  " unimpaired.vim: pairs of handy bracket mappings
-  Plugin 'tpope/vim-unimpaired'
+" unimpaired.vim: pairs of handy bracket mappings
+Plug 'tpope/vim-unimpaired'
 
-  " Vim's MatchParen for HTML tags
-  Plugin 'gregsexton/MatchTag'
+" Vim's MatchParen for HTML tags
+Plug 'gregsexton/MatchTag'
 
-  " endwise.vim: wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
-  Plugin 'tpope/vim-endwise'
+" endwise.vim: wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
+Plug 'tpope/vim-endwise'
 
-  " Fork of SimpleFold.vim by Mauricio Fernandez. Space-optimized, configurable code folding for vim.
-  Plugin 'pangloss/vim-simplefold'
-  finish
-endif
+" Fork of SimpleFold.vim by Mauricio Fernandez. Space-optimized, configurable code folding for vim.
+Plug 'pangloss/vim-simplefold'
 
 
 if has("eval")
@@ -29,4 +26,5 @@ if has("eval")
 
   map <unique> <Leader>f <Plug>SimpleFold_Foldsearch
   "map <unique> <silent> <Leader>r <Plug>SimpleFold_Foldsearch
+  finish
 endif

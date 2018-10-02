@@ -1,12 +1,8 @@
 " Section: Vim, Sessions
 " ------------------------
 
-if exists("g:vundle_install_plugin")
-  " Extended session management for Vim
-  Plugin 'xolox/vim-session'
-
-  finish
-endif
+" Extended session management for Vim
+Plug 'xolox/vim-session'
 
 let g:session_autoload = 'no'
 let g:session_default_to_last = 'no'

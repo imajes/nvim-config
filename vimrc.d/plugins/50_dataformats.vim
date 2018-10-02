@@ -1,11 +1,7 @@
 " Section: Language, Configs
 " -----------------------------
 
-if exists("g:vundle_install_plugin")
-  Plugin 'chrisbra/csv.vim'
-
-  finish
-endif
+Plug 'chrisbra/csv.vim'
 
 "autocmd FileType csv            setlocal et sw=2 sts=2
 
