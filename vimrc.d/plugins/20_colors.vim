@@ -13,11 +13,43 @@ Plug 'scwood/vim-hybrid'
 Plug 'hhsnopek/vim-firewatch'
 Plug 'juanedi/predawn.vim'
 Plug 'hzchirs/vim-material'
-
+Plug 'arcticicestudio/nord-vim'
+Plug 'liuchengxu/space-vim-theme'
+Plug 'nightsense/vimspectr'
+Plug 'nightsense/office'
+Plug 'arzg/vim-corvine'
 
 if has("gui_vimr") || has("gui_macvim")
-  set background=dark
-  "
+  set background=light
+  " highlight LineNr guifg=#efefef
+
+  let g:nord_underline = 1
+  let g:nord_italic_comments = 1
+  let g:nord_cursor_line_number_background = 1
+
+  if strftime("%H") < 7 || strftime("%H") >= 19
+    let themes = [
+          \ 'vimspectr0-Dark'   , 'vimspectr0-Dark'    , 'vimspectr30-Dark'  ,
+          \ 'vimspectr60-Dark'  , 'vimspectr90-Dark'   , 'vimspectr120-Dark' ,
+          \ 'vimspectr150-Dark' , 'vimspectr180-Dark'  , 'vimspectr210-Dark' ,
+          \ 'vimspectr240-Dark' , 'vimspectr270-Dark'  , 'vimspectr300-Dark' ,
+          \ 'vimspectr330-Dark' , 'vimspectrgrey-Dark'
+          \ ]
+  else
+    let themes = [
+          \ 'vimspectr0-Light'  , 'vimspectr0-Light'   , 'vimspectr30-Light' ,
+          \ 'vimspectr60-Light' , 'vimspectr90-Light'  , 'vimspectr120-Light',
+          \ 'vimspectr150-Light', 'vimspectr180-Light' , 'vimspectr210-Light',
+          \ 'vimspectr240-Light', 'vimspectr270-Light' , 'vimspectr300-Light',
+          \ 'vimspectr330-Light', 'vimspectrgrey-Light'
+          \ ]
+  endif
+
+  " autocmd VimEnter * exec 'colorscheme '.themes[localtime() % len(themes)]
+  "exe 'colorscheme '.themes[localtime() % len(themes)]
+  autocmd VimEnter * colorscheme space_vim_theme
+
+
   if has("gui_macvim")
     " set guifont=Source\ Code\ Pro\ Light\ for\ Powerline:h12
     set guifont=Sauce\ Code\ Powerline\ Light:h13
@@ -27,12 +59,10 @@ if has("gui_vimr") || has("gui_macvim")
     set transparency=2
   endif
 
-  autocmd VimEnter * colorscheme vim-material
-  highlight LineNr guifg=#efefef
 else
   let g:solarized_termcolors=256
-  set background=dark
-  autocmd VimEnter * colorscheme distinguished
+  "set background=dark
+  autocmd VimEnter * colorscheme codeschool
 endif
 
 set showtabline=2

@@ -10,3 +10,5 @@ log
 bundle/*
 /view
 /plugged
+/backups
+/autoload/plug.vim.old

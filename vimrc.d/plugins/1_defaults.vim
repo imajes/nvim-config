@@ -37,6 +37,7 @@ set autowrite
 set backspace=2
 set encoding=utf-8
 
+set signcolumn=yes " don't let the sign gutter show and hide when using ale
 
 set cmdheight=2
 set display=lastline

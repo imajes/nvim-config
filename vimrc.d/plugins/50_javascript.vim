@@ -2,7 +2,7 @@
 " -----------------------------
 
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
 
 " clean expander
