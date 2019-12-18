@@ -11,7 +11,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'gregsexton/MatchTag'
 
 " endwise.vim: wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
 
 " Fork of SimpleFold.vim by Mauricio Fernandez. Space-optimized, configurable code folding for vim.
 Plug 'pangloss/vim-simplefold'
@@ -24,7 +24,7 @@ if has("eval")
   let g:surround_{char2nr('s')} = " \r"
   let g:surround_indent = 1
 
-  map <unique> <Leader>f <Plug>SimpleFold_Foldsearch
+  map <unique> <Leader>sf <Plug>SimpleFold_Foldsearch
   "map <unique> <silent> <Leader>r <Plug>SimpleFold_Foldsearch
   finish
 endif

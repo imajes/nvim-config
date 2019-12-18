@@ -27,7 +27,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 " automap for filetypes
 autocmd BufNewFile,BufRead *.haml             set ft=haml
 autocmd BufNewFile,BufRead *.feature,*.story  set ft=cucumber
-autocmd BufNewFile,BufRead *.erb set ft=eruby
+autocmd BufNewFile,BufRead *.erb              set ft=eruby
 
 autocmd FileType gem                    setlocal ft=ruby
 autocmd FileType eruby,yaml,ruby        setlocal et ts=2 sw=2 sts=2 expandtab list listchars=tab:»·,trail:· 
@@ -68,7 +68,7 @@ let g:rails_projections = {
       \   "alternate": "app/models/%i.rb",
       \   "related":   "db/schema.rb#%s",
       \   "test":      "test/models/%i_test.rb",
-      \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \   "template":  "FactoryBot.define do\n  factory :%i do\n  end\nend",
       \   "keywords":  "factory sequence"
       \ },
       \ "spec/factories/*.rb": {
@@ -77,7 +77,7 @@ let g:rails_projections = {
       \   "alternate": "app/models/%i.rb",
       \   "related":   "db/schema.rb#%s",
       \   "test":      "spec/models/%i_spec.rb",
-      \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+      \   "template":  "FactoryBot.define do\n  factory :%i do\n  end\nend",
       \   "keywords":  "factory sequence"
       \ },
       \ "spec/features/*_spec.rb": {
@@ -124,3 +124,5 @@ let g:ruby_doc_command='open'
 let g:ruby_minlines = 50
 "let g:ruby_debugger_progname = 'mvim'
 
+" solargraph ruby intellisense server
+"
