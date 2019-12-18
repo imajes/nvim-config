@@ -7,7 +7,8 @@ Plug 'lucapette/vim-ruby-doc'
 Plug 'nelstrom/vim-textobj-rubyblock'
 
 " ruby extra
-Plug 'tpope/vim-rvm'
+" Plug 'tpope/vim-rvm'
+Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-rake'
 
 " rails
@@ -15,6 +16,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 
 " testing
+Plug 'sunaku/vim-ruby-minitest'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-cucumber'
 
@@ -30,7 +32,7 @@ autocmd BufNewFile,BufRead *.feature,*.story  set ft=cucumber
 autocmd BufNewFile,BufRead *.erb              set ft=eruby
 
 autocmd FileType gem                    setlocal ft=ruby
-autocmd FileType eruby,yaml,ruby        setlocal et ts=2 sw=2 sts=2 expandtab list listchars=tab:»·,trail:· 
+autocmd FileType eruby,yaml,ruby        setlocal et ts=2 sw=2 sts=2 expandtab list listchars=tab:»·,trail:·
 autocmd FileType cucumber               setlocal et ts=2 sw=2 sts=2 expandtab
 autocmd FileType ruby                   setlocal comments=:#\  tw=80
 
