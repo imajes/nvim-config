@@ -18,14 +18,19 @@ Plug 'liuchengxu/space-vim-theme'
 Plug 'nightsense/vimspectr'
 Plug 'nightsense/office'
 Plug 'arzg/vim-corvine'
+Plug 'skbolton/embark'
 
 if has("gui_vimr") || has("gui_macvim")
-  set background=light
-  " highlight LineNr guifg=#efefef
+  set background=dark
+  set termguicolors
+  set cursorline
 
   let g:nord_underline = 1
   let g:nord_italic_comments = 1
   let g:nord_cursor_line_number_background = 1
+  let g:lightline = {
+      \ 'colorscheme': 'embark',
+      \ }
 
   if strftime("%H") < 7 || strftime("%H") >= 19
     let themes = [
@@ -47,22 +52,21 @@ if has("gui_vimr") || has("gui_macvim")
 
   " autocmd VimEnter * exec 'colorscheme '.themes[localtime() % len(themes)]
   "exe 'colorscheme '.themes[localtime() % len(themes)]
-  autocmd VimEnter * colorscheme space_vim_theme
-
+  autocmd VimEnter * colorscheme embark
+  autocmd VimEnter * hi LineNr guifg=#585273
 
   if has("gui_macvim")
     " set guifont=Source\ Code\ Pro\ Light\ for\ Powerline:h12
     set guifont=Sauce\ Code\ Powerline\ Light:h13
     "set guifont=Fira\ Code:h11
     "set macligatures
-
     set transparency=2
   endif
 
 else
   let g:solarized_termcolors=256
   "set background=dark
-  autocmd VimEnter * colorscheme codeschool
+  autocmd VimEnter * colorscheme embark
 endif
 
 set showtabline=2

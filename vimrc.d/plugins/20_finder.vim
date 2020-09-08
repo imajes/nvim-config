@@ -3,7 +3,8 @@
 
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 " Plug 'kien/ctrlp.vim'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'

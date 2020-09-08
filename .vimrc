@@ -1,3 +1,5 @@
+" let $NVIM_COC_LOG_LEVEL = 'debug'
+
 " light-weight web focused vimrc.
 "
 " Maintainer:	James Cox, <james at imaj.es>

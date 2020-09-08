@@ -45,6 +45,10 @@ set incsearch       " Incremental search
 set joinspaces
 set laststatus=2    " Always show status line
 
+let g:mapleader = ',' "remap leader to comma
+
+" stolen from https://github.com/willfish/vimrc
+set lazyredraw      " Don't redraw while executing macros (perf boost)
 
 set modelines=5     " Debian likes to disable this
 set scrolloff=1
@@ -52,6 +56,7 @@ set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
 set smartcase       " Case insensitive searches become sensitive with capitals
 set smarttab        " sw at the start of the line, sts everywhere else
+set smartindent     " looks like this is cool
 
 if exists("+spelllang")
   set spelllang=en_us
@@ -70,7 +75,9 @@ set visualbell
 set virtualedit=block
 set wildmenu
 set wildmode=longest:full,full
-set wildignore+=*~
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*.o,*~,*.pyc | " Ignore version control and os files
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:$,precedes:«,extends:»  | " Show special characters
+
 set winaltkeys=no
 
 if v:version >= 600
@@ -94,4 +101,7 @@ if has("eval")
   let &highlight = substitute(&highlight,'NonText','SpecialKey','g')
 endif
 
-
+augroup preserve_last_position
+  " Return to last edit position when opening files (You want this!)
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup END
