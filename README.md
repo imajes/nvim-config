@@ -20,15 +20,15 @@ The organization of this folder is pretty simple:
 ## ./.vimrc
 here, there's .vimrc. it's the first point for all of these files
 
-## ./vimrc.d/10_vundle.vim:
+## ./vimrc.d/0_plug.vim:
 the brains behind the way vundle et al are sourced; this allows for the rest
 of the plugin system.
 
 
 ## ./vimrc.d/plugins:
 
-* **0_prerequisites.vim** - this is for anything that must happen before all else
-* **1_defaults.vim**      - for globally setting anything that helps 'reset' and
+* **00_prerequisites.vim** - this is for anything that must happen before all else
+* **01_defaults.vim**      - for globally setting anything that helps 'reset' and
                             create a clear setting
 * **10_**                 - currently unused
 * **20_**                 - vundled plugins over all filetypes. colors, comments, syntax.
