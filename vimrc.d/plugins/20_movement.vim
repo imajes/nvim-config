@@ -1,15 +1,17 @@
 " Section: Vim, Movement
 " ------------------------
 
-" Vim motions on speed!
-Plug 'Lokaltog/vim-easymotion'
+Plug 'christoomey/vim-sort-motion'   | " Sort motion
+Plug 'tpope/vim-commentary'          | " Comment motion
 
-" Graph your Vim undo tree in style. - undo tree
-Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'                  | " Graph your Vim undo tree in style. - undo tree
 
-" True Sublime Text style multiple selections for Vim
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'         | " Experimental: multiple cursors
+Plug 'tpope/vim-dadbod'               | " Experimental: multiple cursors
+Plug 'kristijanhusak/vim-dadbod-ui'   | " Experimental: multiple cursors
 
-" abolish.vim: easily search for, substitute, and abbreviate multiple variants of a word
-Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-abolish'              | " abolish.vim: easily search for, substitute, and abbreviate multiple variants of a word
 
+
+" " Vim motions on speed!
+" Plug 'Lokaltog/vim-easymotion'

@@ -2,21 +2,39 @@
 " --------------------------------
 
 " coc- conquer all
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile', 'branch': 'release'}
 
 "let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
 
-" Better display for messages
-set cmdheight=2
+set cmdheight=2    | " Better display for messages
+set updatetime=300 | " You will have bad experience for diagnostic messages when it's default 4000.
+set shortmess+=c   | " don't give |ins-completion-menu| messages.
+set signcolumn=yes | " always show signcolumns
 
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
+let g:coc_global_extensions = [
+      \ 'coc-cfn-lint',
+      \ 'coc-css',
+      \ 'coc-docker',
+      \ 'coc-elixir',
+      \ 'coc-explorer',
+      \ 'coc-go',
+      \ 'coc-html',
+      \ 'coc-json',
+      \ 'coc-lists',
+      \ 'coc-lua',
+      \ 'coc-markdownlint',
+      \ 'coc-pairs',
+      \ 'coc-python',
+      \ 'coc-rls',
+      \ 'coc-sh',
+      \ 'coc-snippets',
+      \ 'coc-solargraph',
+      \ 'coc-sql',
+      \ 'coc-tsserver',
+      \ 'coc-vimlsp',
+      \ 'coc-yaml',
+      \ 'coc-yank'
+      \]
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -130,3 +148,7 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" explorer...?
+nnoremap <silent><leader>n :CocCommand explorer<CR>
+

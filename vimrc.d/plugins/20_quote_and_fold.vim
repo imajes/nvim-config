@@ -25,7 +25,16 @@ imap <expr> <CR> (pumvisible() ? "\<C-Y>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<
 
 
 " Fork of SimpleFold.vim by Mauricio Fernandez. Space-optimized, configurable code folding for vim.
-Plug 'pangloss/vim-simplefold'
+" Plug 'pangloss/vim-simplefold'
+"
+" map <unique> <Leader>sf <Plug>SimpleFold_Foldsearch
+" "map <unique> <silent> <Leader>r <Plug>SimpleFold_Foldsearch
 
-map <unique> <Leader>sf <Plug>SimpleFold_Foldsearch
-"map <unique> <silent> <Leader>r <Plug>SimpleFold_Foldsearch
+Plug 'pseewald/vim-anyfold'
+
+augroup anyfold
+  autocmd Filetype * AnyFoldActivate
+augroup END | " Anyfold: Enable polyglot folds in every buffer type
+
+let anyfold_fold_comments=1
+set foldlevel=99 | " Anyfold: Open folds to 99 folds deep
