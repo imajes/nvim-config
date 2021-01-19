@@ -2,7 +2,7 @@
 " --------------------------------
 
 " coc- conquer all
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile', 'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
 
@@ -49,8 +49,16 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+" Use <c-space> to trigger showing _the completion floating window_
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" to theoretically help discarding the floating window - https://github.com/neoclide/coc.nvim/issues/1197
+"inoremap <C-c> <Esc><Esc>
+"nmap <Esc> :call coc#float#close_all() <CR>
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.

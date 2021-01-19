@@ -20,6 +20,8 @@ Plug 'sunaku/vim-ruby-minitest'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-cucumber'
 
+let g:ruby_host_prog = '~/.rbenv/shims/neovim-ruby-host'
+
 " RSpec.vim mappings
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>

@@ -3,8 +3,7 @@
 
 " core
 Plug 'fatih/vim-go'
-Plug 'garyburd/go-explorer'
-
+"Plug 'garyburd/go-explorer' " not maintained, repo no longer exists.
 
 "strip trailing whitespace on save for code files
 autocmd BufWritePre *.go :%s/\s\+$//e
