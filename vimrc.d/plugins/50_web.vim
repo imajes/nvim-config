@@ -11,11 +11,14 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-haml'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-markdown'
+Plug 'masukomi/vim-markdown-folding'
 Plug 'mustache/vim-mustache-handlebars'
 
 autocmd Syntax   css syn sync minlines=50
 autocmd FileType css set fdm=marker fmr={,}
 autocmd FileType css silent! setlocal omnifunc=csscomplete#CompleteCSS
+
+autocmd FileType markdown set foldexpr=NestedMarkdownFolds()
 
 autocmd BufRead * if ! did_filetype() && getline(1)." ".getline(2).
       \ " ".getline(3) =~? '<\%(!DOCTYPE \)\=html\>' | setf html | endif

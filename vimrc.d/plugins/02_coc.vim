@@ -4,7 +4,10 @@
 " coc- conquer all
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
+" enable for coc debug options
+" let g:node_client_debug = 1
+" let $NODE_CLIENT_LOG_FILE = '/tmp/coc-node-debug.log'
+" let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
 
 set cmdheight=2    | " Better display for messages
 set updatetime=300 | " You will have bad experience for diagnostic messages when it's default 4000.
@@ -12,29 +15,30 @@ set shortmess+=c   | " don't give |ins-completion-menu| messages.
 set signcolumn=yes | " always show signcolumns
 
 let g:coc_global_extensions = [
-      \ 'coc-cfn-lint',
       \ 'coc-css',
       \ 'coc-docker',
-      \ 'coc-elixir',
-      \ 'coc-explorer',
-      \ 'coc-go',
-      \ 'coc-html',
+      \ 'coc-fzf-preview',
       \ 'coc-json',
-      \ 'coc-lists',
-      \ 'coc-lua',
       \ 'coc-markdownlint',
-      \ 'coc-pairs',
-      \ 'coc-python',
-      \ 'coc-rls',
       \ 'coc-sh',
-      \ 'coc-snippets',
       \ 'coc-solargraph',
       \ 'coc-sql',
       \ 'coc-tsserver',
-      \ 'coc-vimlsp',
       \ 'coc-yaml',
       \ 'coc-yank'
       \]
+      " \ 'coc-vimlsp',
+      " \ 'coc-explorer',
+      " \ 'coc-cfn-lint',
+      " \ 'coc-pairs',
+      " \ 'coc-python',
+      " \ 'coc-rls',
+      " \ 'coc-lists',
+      " \ 'coc-snippets',
+      " \ 'coc-elixir',
+      " \ 'coc-lua',
+      " \ 'coc-go',
+      " \ 'coc-html',
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -92,6 +96,8 @@ endfunction
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * call coc#float#check_related()
+autocmd CursorHoldI * call coc#float#check_related()
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
