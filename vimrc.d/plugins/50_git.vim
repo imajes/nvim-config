@@ -3,6 +3,10 @@
 
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/gist-vim'
+Plug 'airblade/vim-gitgutter'   " display your changes in a gutter, undo them and preview them link.
+Plug 'itchyny/vim-gitbranch' " display the git branch in lightline in your active git repo link.
+Plug 'junegunn/gv.vim'       " not necessary but a nice explorer for your git repo and commits, useless if you use tig link.
+
 
 autocmd FileType gitcommit setlocal spell
 autocmd FileType gitconfig setlocal noet sw=8

@@ -19,49 +19,30 @@ Plug 'nightsense/vimspectr'
 Plug 'nightsense/office'
 Plug 'arzg/vim-corvine'
 Plug 'skbolton/embark'
+Plug 'ayu-theme/ayu-vim'
+
+Plug 'nightsense/night-and-day'
+
+let g:nd_themes = [
+      \ [ 'sunrise+0', 'embark',       'dark', 'nord' ],
+      \ [ 'sunset+0',  'vim-material', 'dark', 'nord' ],
+      \ ]
+let g:nd_latitude = '45'
+let g:nd_timeshift = '0'
+let g:nd_lightline = 1
 
 if has("gui_vimr") || has("gui_macvim")
-  set background=dark
   set termguicolors
   set cursorline
 
   let g:nord_underline = 1
   let g:nord_italic_comments = 1
   let g:nord_cursor_line_number_background = 1
-  let g:lightline = {
-      \ 'colorscheme': 'embark',
-      \ }
+  "let g:lightline.colorscheme = 'wombat'
 
-  if strftime("%H") < 7 || strftime("%H") >= 19
-    let themes = [
-          \ 'vimspectr0-Dark'   , 'vimspectr0-Dark'    , 'vimspectr30-Dark'  ,
-          \ 'vimspectr60-Dark'  , 'vimspectr90-Dark'   , 'vimspectr120-Dark' ,
-          \ 'vimspectr150-Dark' , 'vimspectr180-Dark'  , 'vimspectr210-Dark' ,
-          \ 'vimspectr240-Dark' , 'vimspectr270-Dark'  , 'vimspectr300-Dark' ,
-          \ 'vimspectr330-Dark' , 'vimspectrgrey-Dark'
-          \ ]
-  else
-    let themes = [
-          \ 'vimspectr0-Light'  , 'vimspectr0-Light'   , 'vimspectr30-Light' ,
-          \ 'vimspectr60-Light' , 'vimspectr90-Light'  , 'vimspectr120-Light',
-          \ 'vimspectr150-Light', 'vimspectr180-Light' , 'vimspectr210-Light',
-          \ 'vimspectr240-Light', 'vimspectr270-Light' , 'vimspectr300-Light',
-          \ 'vimspectr330-Light', 'vimspectrgrey-Light'
-          \ ]
-  endif
-
-  " autocmd VimEnter * exec 'colorscheme '.themes[localtime() % len(themes)]
-  "exe 'colorscheme '.themes[localtime() % len(themes)]
-  autocmd VimEnter * colorscheme embark
-  autocmd VimEnter * hi LineNr guifg=#585273
-
-  if has("gui_macvim")
-    " set guifont=Source\ Code\ Pro\ Light\ for\ Powerline:h12
-    set guifont=Sauce\ Code\ Powerline\ Light:h13
-    "set guifont=Fira\ Code:h11
-    "set macligatures
-    set transparency=2
-  endif
+  " set background=dark
+  " autocmd VimEnter * colorscheme embark
+  "autocmd VimEnter * hi LineNr guifg=#585273
 
 else
   let g:solarized_termcolors=256

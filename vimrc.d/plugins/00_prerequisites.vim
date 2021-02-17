@@ -15,3 +15,5 @@ Plug 'xolox/vim-misc'
 Plug 'tomtom/tlib_vim'
 
 Plug 'tpope/vim-repeat'                     | " repeat.vim: enable repeating supported Plug maps with
+
+Plug 'psliwka/vim-smoothie'                 | " smoothest scroll in the west

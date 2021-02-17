@@ -1,12 +1,32 @@
 " Section: Visual, Statusline
 " -----------------------------
 
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'maximbaz/lightline-ale'
 
-" airline config
-let g:airline_theme='base16_spacemacs'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
+set noshowmode
+
+let g:lightline = {}
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_infos': 'lightline#ale#infos',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'right',
+      \     'linter_infos': 'right',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'right',
+      \ }
+
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_infos = "\uf129"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
