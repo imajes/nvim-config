@@ -48,14 +48,14 @@ let g:rails_projections = {
       \ "config/projections.json": {
       \   "command": "projections"
       \ },
-      \ "app/workers/*_worker.rb": {
-      \   "command":   "worker",
+      \ "app/configs/*.rb": {
+      \   "command":   "config",
       \   "affinity":  "model",
-      \   "alternate": "spec/workers/%i_worker_spec.rb",
+      \   "alternate": "spec/configs/%i_config_spec.rb",
       \   "related":   "db/schema.rb#%s",
-      \   "test":      "spec/jobs/%i_worker_spec.rb",
-      \   "template": "class %SJob\n  include Sidekiq::Worker\n\n  @queue = :%i\n\n  def perform()\n  end\nend",
-      \   "keywords":  "async job sequence"
+      \   "test":      "spec/configs/%i_config_spec.rb",
+      \   "template": "class %SConfig < ApplicationConfig\n\n  config_name :%i\n\n  required_config :x\n\nend",
+      \   "keywords": "config extraction sequence"
       \ },
       \ "app/services/*.rb": {
       \   "command":   "service",
@@ -86,10 +86,28 @@ let g:rails_projections = {
       \ },
       \ "spec/features/*_spec.rb": {
       \   "command": "feature",
-      \   "template": "require 'spec_helper'\n\nfeature '%h' do\n\nend",
+      \   "template": "require 'spec_helper'\n\nRSpec.feature '%h' do\n\nend",
       \ }}
 
 let g:rails_gem_projections = {
+      \ "blueprinter": {
+      \   "app/blueprints/*_blueprint.rb": {
+      \     "command": "blueprint",
+      \     "affinity": "model",
+      \     "test": "spec/blueprints/%s_blueprint_spec.rb",
+      \     "related": "app/models/%s.rb",
+      \     "template": "class %SBlueprint < Blueprinter::Base\nn    identifier :x\nn    fields :y, :z\n\nend"
+      \   }
+      \ },
+      \ "interactor-rails": {
+      \   "app/interactors/*.rb": {
+      \     "command": "interactor",
+      \     "affinity": "model",
+      \     "test": "spec/interactors/%s_spec.rb",
+      \     "related": "app/models/%s.rb",
+      \     "template": "class %S\n  include Interactor\n\n  def call\n  # TODO\n\n  end\nend"
+      \   }
+      \ },
       \ "active_model_serializers": {
       \   "app/serializers/*_serializer.rb": {
       \     "command": "serializer",

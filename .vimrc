@@ -25,6 +25,8 @@ if filereadable(expand("~/.vim/after.vimrc"))
   source ~/.vim/after.vimrc
 endif
 
+let $NVIM_RUBY_LOG_FILE = '~/.nvim_ruby.log'
+
 " log everything!
 ":call ToggleVerbose()
 

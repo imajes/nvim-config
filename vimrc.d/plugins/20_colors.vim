@@ -21,17 +21,17 @@ Plug 'arzg/vim-corvine'
 Plug 'skbolton/embark'
 Plug 'ayu-theme/ayu-vim'
 
-Plug 'nightsense/night-and-day'
-
-let g:nd_themes = [
-      \ [ 'sunrise+0', 'embark',       'dark', 'nord' ],
-      \ [ 'sunset+0',  'vim-material', 'dark', 'nord' ],
-      \ ]
-let g:nd_latitude = '45'
-let g:nd_timeshift = '0'
-let g:nd_lightline = 1
-
 if has("gui_vimr") || has("gui_macvim")
+  " Plug 'nightsense/night-and-day'
+  "
+  " let g:nd_themes = [
+  "       \ [ 'sunrise+0', 'embark', 'dark', 'ayu_light' ],
+  "       \ [ 'sunset+0',  'vim-material', 'dark', 'ayu_dark' ],
+  "       \ ]
+  " let g:nd_latitude = '45'
+  " let g:nd_timeshift = '0'
+  " let g:nd_lightline = 1
+
   set termguicolors
   set cursorline
 
@@ -40,9 +40,9 @@ if has("gui_vimr") || has("gui_macvim")
   let g:nord_cursor_line_number_background = 1
   "let g:lightline.colorscheme = 'wombat'
 
-  " set background=dark
-  " autocmd VimEnter * colorscheme embark
-  "autocmd VimEnter * hi LineNr guifg=#585273
+  set background=dark
+  autocmd VimEnter * colorscheme embark
+  autocmd VimEnter * hi LineNr guifg=#585273
 
 else
   let g:solarized_termcolors=256
