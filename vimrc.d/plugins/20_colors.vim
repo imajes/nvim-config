@@ -20,6 +20,7 @@ Plug 'nightsense/office'
 Plug 'arzg/vim-corvine'
 Plug 'skbolton/embark'
 Plug 'ayu-theme/ayu-vim'
+Plug 'ingram1107/vim-zhi'
 
 if has("gui_vimr") || has("gui_macvim")
   " Plug 'nightsense/night-and-day'
