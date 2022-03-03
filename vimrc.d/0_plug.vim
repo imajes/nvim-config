@@ -9,7 +9,7 @@ if has("nvim")
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
 else
-  if empty(glob('~/.vim/autoload/plug.vim'))
+  if empty(glob('~/.config/nvim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -20,13 +20,13 @@ endif
 if has("nvim")
   let s:plug_start_path = '~/.local/share/nvim/site/plugged'
 else
-  let s:plug_start_path = '~/.vim/plugged'
+  let s:plug_start_path = '~/.config/nvim/plugged'
 endif
 
 call plug#begin(s:plug_start_path)
 
 " source all the configs for all such plugs
-for file in split(glob('~/.vim/vimrc.d/plugins/*.vim'), '\n')
+for file in split(glob('~/.config/nvim/vimrc.d/plugins/*.vim'), '\n')
   exe 'source' file
 endfor
 

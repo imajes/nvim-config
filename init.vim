@@ -11,23 +11,18 @@
 
 " Load external configuration before anything else.
 
-if filereadable(expand("~/.vim/before.vimrc"))
-  source ~/.vim/before.vimrc
+if filereadable(expand("~/.config/nvim/before-init.vim"))
+  source ~/.config/nvim/before-init.vim
 endif
 
 " Source all of the .vim files in ~/.vim/vimrc.d directory.
-for file in split(glob('~/.vim/vimrc.d/*.vim'), '\n')
+for file in split(glob('~/.config/nvim/vimrc.d/*.vim'), '\n')
     exe 'source' file
 endfor
 
 " Load addidional configuration (ie to overwrite shorcuts).
-if filereadable(expand("~/.vim/after.vimrc"))
-  source ~/.vim/after.vimrc
+if filereadable(expand("~/.config/nvim/after-init.vim"))
+  source ~/.config/nvim/after-init.vim
 endif
-
-let $NVIM_RUBY_LOG_FILE = '~/.nvim_ruby.log'
-
-" log everything!
-":call ToggleVerbose()
 
 " vim:set ft=vim et tw=78 sw=2:
