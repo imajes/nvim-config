@@ -4,6 +4,9 @@
 " Extended session management for Vim
 Plug 'xolox/vim-session'
 
+" Buffer management
+Plug 'Asheq/close-buffers.vim'
+
 let g:session_autoload = 'no'
 let g:session_default_to_last = 'no'
 let g:session_autosave = 'yes'
@@ -16,4 +19,3 @@ set sessionoptions-=buffers " hide hidden buffers from the session
 set sessionoptions-=options " do not store global and local values in a session
 set sessionoptions-=folds   " do not store folds
 set sessionoptions-=help    " do not restore helps
-
