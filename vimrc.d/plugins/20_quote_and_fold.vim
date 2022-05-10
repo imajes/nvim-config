@@ -17,11 +17,11 @@ Plug 'tpope/vim-unimpaired'
 Plug 'gregsexton/MatchTag'
 
 " endwise.vim: wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
-Plug 'tpope/vim-endwise'
+"Plug 'tpope/vim-endwise' " replaced via treesitter plugin
 
-let g:endwise_no_mappings=1
-imap <C-X><CR>   <CR><Plug>AlwaysEnd
-imap <expr> <CR> (pumvisible() ? "\<C-Y>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
+" let g:endwise_no_mappings=1
+" imap <C-X><CR>   <CR><Plug>AlwaysEnd
+" imap <expr> <CR> (pumvisible() ? "\<C-Y>\<CR>\<Plug>DiscretionaryEnd" : "\<CR>\<Plug>DiscretionaryEnd")
 
 
 " Fork of SimpleFold.vim by Mauricio Fernandez. Space-optimized, configurable code folding for vim.
