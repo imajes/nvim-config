@@ -1,9 +1,11 @@
 " configure plugins via lua
 
+if has("nvim")
 lua <<EOF
 require('cmp_config')
 require('telescope_config')
 EOF
+endif
 
 let $NVIM_RUBY_LOG_FILE = '~/.nvim_ruby.log'
 

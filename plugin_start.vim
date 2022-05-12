@@ -26,10 +26,9 @@ endif
 call plug#begin(s:plug_start_path)
 
 " source all the configs for all such plugs
-for file in split(glob('~/.config/nvim/vimrc.d/plugins/*.vim'), '\n')
+for file in split(glob('~/.config/nvim/plugin_config/*.vim'), '\n')
   exe 'source' file
 endfor
 
 " Initialize plugin system
 call plug#end()
-

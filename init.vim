@@ -15,10 +15,10 @@ if filereadable(expand("~/.config/nvim/before-init.vim"))
   source ~/.config/nvim/before-init.vim
 endif
 
-" Source all of the .vim files in ~/.vim/vimrc.d directory.
-for file in split(glob('~/.config/nvim/vimrc.d/*.vim'), '\n')
-    exe 'source' file
-endfor
+" Source all of the plugin config files.
+if filereadable(expand("~/.config/nvim/plugin_start.vim"))
+  source ~/.config/nvim/plugin_start.vim
+endif
 
 " Load addidional configuration (ie to overwrite shorcuts).
 if filereadable(expand("~/.config/nvim/after-init.vim"))
