@@ -30,6 +30,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+Plug 'github/copilot.vim'
 
 " " set tab as autocomplete
 " imap <Tab> <C-y>

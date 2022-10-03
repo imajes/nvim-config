@@ -1,40 +1,42 @@
 " Section: Visual, Colors
 " ------------------------
 
-Plug 'lifepillar/vim-solarized8'
-Plug 'vim-scripts/candycode.vim'
-Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'vim-scripts/corporation'
 Plug 'Lokaltog/vim-distinguished'
-Plug 'nanotech/jellybeans.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'arzg/vim-corvine'
+Plug 'ayu-theme/ayu-vim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'hhsnopek/vim-firewatch'
+Plug 'hzchirs/vim-material'
+Plug 'ingram1107/vim-zhi'
+Plug 'juanedi/predawn.vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'liuchengxu/space-vim-theme'
 Plug 'micha/grb256'
 Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'navarasu/onedark.nvim'
+"Plug 'nightsense/office'
+"Plug 'nightsense/vimspectr'
 Plug 'scwood/vim-hybrid'
-Plug 'hhsnopek/vim-firewatch'
-Plug 'juanedi/predawn.vim'
-Plug 'hzchirs/vim-material'
-Plug 'arcticicestudio/nord-vim'
-Plug 'liuchengxu/space-vim-theme'
-Plug 'nightsense/vimspectr'
-Plug 'nightsense/office'
-Plug 'arzg/vim-corvine'
 Plug 'skbolton/embark'
-Plug 'ayu-theme/ayu-vim'
-Plug 'ingram1107/vim-zhi'
+Plug 'vim-scripts/candycode.vim'
+Plug 'vim-scripts/corporation'
 
 if has("gui_vimr") || has("gui_macvim")
   " Plug 'nightsense/night-and-day'
   "
   " let g:nd_themes = [
-  "       \ [ 'sunrise+0', 'embark', 'dark', 'ayu_light' ],
-  "       \ [ 'sunset+0',  'vim-material', 'dark', 'ayu_dark' ],
-  "       \ ]
-  " let g:nd_latitude = '45'
-  " let g:nd_timeshift = '0'
-  " let g:nd_lightline = 1
+    "       \ [ 'sunrise+0', 'embark', 'dark', 'ayu_light' ],
+    "       \ [ 'sunset+0',  'vim-material', 'dark', 'ayu_dark' ],
+    "       \ ]
+    " let g:nd_latitude = '45'
+    " let g:nd_timeshift = '0'
+    " let g:nd_lightline = 1
 
-  set termguicolors
-  set cursorline
+    set termguicolors
+    set cursorline
 
   let g:nord_underline = 1
   let g:nord_italic_comments = 1

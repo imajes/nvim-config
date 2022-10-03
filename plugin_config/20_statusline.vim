@@ -7,7 +7,7 @@ Plug 'maximbaz/lightline-ale'
 
 set noshowmode
 
-let g:lightline = {}
+let g:lightline = {'colorscheme': 'catppuccin'}
 
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
