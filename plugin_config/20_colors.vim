@@ -5,7 +5,7 @@ Plug 'Lokaltog/vim-distinguished'
 Plug 'arcticicestudio/nord-vim'
 Plug 'arzg/vim-corvine'
 Plug 'ayu-theme/ayu-vim'
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+" Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'hhsnopek/vim-firewatch'
 Plug 'hzchirs/vim-material'
@@ -50,7 +50,7 @@ if has("gui_vimr") || has("gui_macvim")
 else
   let g:solarized_termcolors=256
   "set background=dark
-  autocmd VimEnter * colorscheme embark
+  autocmd VimEnter * colorscheme slate
 endif
 
 set showtabline=2
