@@ -98,7 +98,7 @@ endif
 
 if has("eval")
   let &fileencodings = substitute(&fileencodings,"latin1","cp1252","")
-  let &highlight = substitute(&highlight,'NonText','SpecialKey','g')
+  "let &highlight = substitute(&highlight,'NonText','SpecialKey','g')
 endif
 
 augroup preserve_last_position

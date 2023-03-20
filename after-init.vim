@@ -5,7 +5,7 @@ lua <<EOF
 require('cmp_config')
 require('telescope_config')
 require('onedark_config')
-require('catppuccin_config')
+-- require('catppuccin_config')
 EOF
 endif
 
