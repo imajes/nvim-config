@@ -49,7 +49,7 @@ if has("gui_vimr") || has("gui_macvim")
 
 else
   let g:solarized_termcolors=256
-  "set background=dark
+  set background=dark
   autocmd VimEnter * colorscheme slate
 endif
 
