@@ -44,11 +44,7 @@ return {
 
   {
     "folke/tokyonight.nvim",
-    config = function()
-      local tokyonight = require("tokyonight")
-      tokyonight.setup({ style = "night" })
-      tokyonight.load()
-    end,
+    opts = { style = "moon" },
     lazy = true,
   },
 
@@ -212,7 +208,7 @@ return {
 
   {
     -- https://github.com/ramojus/mellifluous.nvim
-    'ramojus/mellifluous.nvim',
+    "ramojus/mellifluous.nvim",
     config = function()
       require("mellifluous").setup()
 

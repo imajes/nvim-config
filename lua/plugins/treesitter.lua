@@ -1,13 +1,9 @@
--- Section: Telescope, treesitter
--- https://github.com/nvim-treesitter/nvim-treesitter
--- ------------------------------------------
-
 return {
   { "RRethy/nvim-treesitter-endwise", lazy = true },
   { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
   { "RRethy/nvim-treesitter-textsubjects", lazy = true },
-  { "nvim-treesitter/nvim-treesitter-refactor", lazy = true},
-  { "nvim-treesitter/nvim-treesitter-context", lazy = true},
+  { "nvim-treesitter/nvim-treesitter-refactor", lazy = true },
+  { "nvim-treesitter/nvim-treesitter-context", lazy = true },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     lazy = true,
@@ -31,23 +27,6 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    version = false, -- last release is way too old and doesn't work on Windows
-    build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
-    dependencies = {
-      {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        "RRethy/nvim-treesitter-textsubjects",
-        "nvim-treesitter/nvim-treesitter-refactor",
-        "nvim-treesitter/nvim-treesitter-context",
-        "nvim-treesitter/nvim-treesitter-textobjects",
-      },
-    },
-    keys = {
-      { "<c-space>", desc = "Increment selection" },
-      { "<bs>", desc = "Decrement selection", mode = "x" },
-    },
-    ---@type TSConfig
     opts = {
       endwise = { enable = true },
       -- highlight notes:
@@ -106,20 +85,5 @@ return {
         },
       },
     },
-    ---@param opts TSConfig
-    config = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        ---@type table<string, boolean>
-        local added = {}
-        opts.ensure_installed = vim.tbl_filter(function(lang)
-          if added[lang] then
-            return false
-          end
-          added[lang] = true
-          return true
-        end, opts.ensure_installed)
-      end
-      require("nvim-treesitter.configs").setup(opts)
-    end,
   },
 }

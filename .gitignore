@@ -1,14 +1,8 @@
-.netrwhist
-sessions
-oldrc
-log
-.tags
-*.swp
-*.*.swp
-
-# ignore stuff from vundle
-bundle/*
-/view
-/plugged
-/backups
-/autoload/plug.vim.old
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
