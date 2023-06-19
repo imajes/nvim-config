@@ -67,7 +67,7 @@ set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 set("n", "<Esc>", "<Cmd>nohlsearch<CR>")
 
 set("n", "<Leader>p", "<Cmd>Lazy<CR>", { desc = "Plugins" })
-set('n', '<C-e>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+set("n", "<C-e>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- gundo toggle
 set("n", "<F5>", ":GundoToggle<cr>", { noremap = true, desc = "New File" })

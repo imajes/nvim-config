@@ -12,6 +12,6 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons',
     },
-  }
+  },
   { import = "plugins.telescope.extras" }
 }

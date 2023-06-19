@@ -8,7 +8,7 @@ return {
     event = {
       "BufReadPost", "BufAdd", "BufNewFile"
     },
-    version = "v3.*",
+    version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons',
 
     config = function()
@@ -22,7 +22,7 @@ return {
             "", ""
           },
           always_show_bufferline = true,
-          sort_by = "insert_at_end",
+          -- sort_by = "insert_at_end",
           offsets = {
             {
               filetype = "NvimTree",
