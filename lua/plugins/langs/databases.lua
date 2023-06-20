@@ -6,13 +6,13 @@ return {
     -- https://github.com/kristijanhusak/vim-dadbod-ui
     "kristijanhusak/vim-dadbod-ui",
     lazy = true,
-    cmd = ":DBUI",
+    cmd = "DBUI",
   },
   {
     -- https://github.com/tpope/vim-dadbod
     "tpope/vim-dadbod",
     lazy = true,
-    cmd = ":DB",
+    cmd = "DB",
   },
   {
     "williamboman/mason.nvim",

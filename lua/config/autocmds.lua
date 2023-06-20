@@ -6,3 +6,15 @@
 vim.api.nvim_create_autocmd("FocusLost", {
   command = "silent! wa",
 })
+
+-- " lose extraneous whitespace at end of lines
+-- cnoreabbrev  ws %s/\s\+$//g
+-- map <Leader>fm :g/^\s*$/,/\S/-j<Bar>%s/\s\+$//<CR>
+--
+-- " squash tabs down; (better is :retab)
+-- cnoreabbrev  squash %s/\s\{4\}/  /g
+
+-- on file save, purge trailing whitespace
+vim.api.nvim_create_autocmd("BufWritePre", {
+  command = [[%s/\s\+$//e]],
+})
