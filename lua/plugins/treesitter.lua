@@ -1,3 +1,6 @@
+-- Section: LSP, treesitter
+-- ------------------------------------------
+
 return {
   { "RRethy/nvim-treesitter-endwise", lazy = true },
   { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },

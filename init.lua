@@ -5,10 +5,10 @@ require("config.lazy")
 if vim.g.neovide then
   vim.o.guifont = "SauceCodePro NF Light:h18:#h-slight:#e-subpixelantialias"
   vim.g.neovide_scale_factor = 1.1
-  vim.g.neovide_padding_top = 10
-  vim.g.neovide_padding_bottom = 10
-  vim.g.neovide_padding_right = 10
-  vim.g.neovide_padding_left = 10
+  vim.g.neovide_padding_top = 5
+  vim.g.neovide_padding_bottom = 5
+  vim.g.neovide_padding_right = 5
+  vim.g.neovide_padding_left = -5
 
   vim.g.neovide_remember_window_size = true
 

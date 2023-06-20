@@ -7,7 +7,7 @@ return {
   --   config = function()
   --     require("mini.hues").setup({ background = "#09182E", foreground = "#dcc9db", saturation = "high", n_hues = 6 })
   --   end,
-  --   lazy = true,
+  --   lazy = false,
   -- },
   --
   {
@@ -39,13 +39,13 @@ return {
       })
       monokai.load()
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
     "folke/tokyonight.nvim",
     opts = { style = "moon" },
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -53,7 +53,7 @@ return {
     config = function()
       vim.cmd("colorscheme horizon")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -61,7 +61,7 @@ return {
     config = function()
       vim.cmd("colorscheme onedarker")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -71,7 +71,7 @@ return {
       vim.g.sonokai_better_performance = 1
       vim.cmd("colorscheme sonokai")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -81,7 +81,7 @@ return {
       vim.g.everforest_better_performance = 1
       vim.cmd("colorscheme everforest")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -91,7 +91,7 @@ return {
       vim.g.edge_better_performance = 1
       vim.cmd("colorscheme edge")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -99,7 +99,7 @@ return {
     config = function()
       vim.cmd("colorscheme nightfox")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -107,7 +107,7 @@ return {
     config = function()
       vim.cmd("colorscheme darkplus")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -115,7 +115,7 @@ return {
     config = function()
       vim.cmd("colorscheme synthwave84")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -123,47 +123,47 @@ return {
     config = function()
       vim.cmd("colorscheme zephyr")
     end,
-    lazy = true,
+    lazy = false,
   },
   {
     "ray-x/aurora",
     config = function()
       vim.cmd("colorscheme aurora")
     end,
-    lazy = true,
+    lazy = false,
     init = function()
       vim.g.aurora_italic = 1
       vim.g.aurora_transparent = 1
       vim.g.aurora_bold = 1
     end,
   },
-  {
-    "nekonako/xresources-nvim",
-    config = function()
-      require("xresources")
-    end,
-    lazy = true,
-  },
+  -- {
+  --   "nekonako/xresources-nvim",
+  --   config = function()
+  --     require("xresources")
+  --   end,
+  --   lazy = false,
+  -- },
   {
     "talha-akram/noctis.nvim",
     config = function()
       vim.cmd("colorscheme noctis_minimus")
     end,
-    lazy = true,
+    lazy = false,
   },
   {
     "Yazeed1s/oh-lucy.nvim",
     config = function()
       vim.cmd("colorscheme oh-lucy-evening")
     end,
-    lazy = true,
+    lazy = false,
   },
   {
     "kvrohit/mellow.nvim",
     config = function()
       vim.cmd("colorscheme mellow")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -171,7 +171,7 @@ return {
     config = function()
       vim.cmd("colorscheme nightfly")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -179,32 +179,32 @@ return {
     config = function()
       require("palenightfall").setup()
     end,
-    lazy = true,
+    lazy = false,
   },
 
-  {
-    "noorwachid/nvim-nightsky",
-    config = function()
-      vim.cmd("colorscheme nightsky")
-    end,
-    lazy = true,
-  },
+  -- {
+  --   "noorwachid/nvim-nightsky",
+  --   config = function()
+  --     vim.cmd("colorscheme nightsky")
+  --   end,
+  --   lazy = false,
+  -- },
 
   {
     "AlexvZyl/nordic.nvim",
     config = function()
       require("nordic").load()
     end,
-    lazy = true,
+    lazy = false,
   },
 
-  {
-    "AlphaTechnolog/pywal.nvim",
-    config = function()
-      require("pywal").setup()
-    end,
-    lazy = true,
-  },
+  -- {
+  --   "AlphaTechnolog/pywal.nvim",
+  --   config = function()
+  --     require("pywal").setup()
+  --   end,
+  --   lazy = false,
+  -- },
 
   {
     -- https://github.com/ramojus/mellifluous.nvim
@@ -214,7 +214,7 @@ return {
 
       vim.cmd("colorscheme mellifluous")
     end,
-    lazy = true,
+    lazy = false,
   },
 
   {
@@ -228,12 +228,12 @@ return {
     lazy = false,
   },
 
-  { "hhsnopek/vim-firewatch", lazy = true },
-  { "EdenEast/nightfox.nvim", lazy = true },
-  { "liuchengxu/space-vim-theme", lazy = true },
-  { "ray-x/starry.nvim", lazy = true },
-  { "catppuccin/nvim", name = "catppuccin", lazy = true },
-  { "projekt0n/github-nvim-theme", lazy = true },
-  { "flazz/vim-colorschemes", lazy = true },
-  { "wincent/base16-nvim", lazy = true },
+  { "hhsnopek/vim-firewatch", lazy = false },
+  { "EdenEast/nightfox.nvim", lazy = false },
+  { "liuchengxu/space-vim-theme", lazy = false },
+  { "ray-x/starry.nvim", lazy = false },
+  { "catppuccin/nvim", name = "catppuccin", lazy = false },
+  { "projekt0n/github-nvim-theme", lazy = false },
+  { "flazz/vim-colorschemes", lazy = false },
+  { "wincent/base16-nvim", lazy = false },
 }
