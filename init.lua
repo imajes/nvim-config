@@ -1,16 +1,14 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
-
 -- https://neovide.dev/configuration.html
 if vim.g.neovide then
   vim.o.guifont = "SauceCodePro NF Light:h18:#h-slight:#e-subpixelantialias"
-  vim.g.neovide_scale_factor = 1.1
+  -- vim.g.neovide_scale_factor = 1.1
   vim.g.neovide_padding_top = 5
   vim.g.neovide_padding_bottom = 5
   vim.g.neovide_padding_right = 5
   vim.g.neovide_padding_left = -5
 
   vim.g.neovide_remember_window_size = true
+  vim.g.neovide_remember_window_position = true
 
   -- Helper function for transparency formatting
   local alpha = function()
@@ -24,3 +22,5 @@ if vim.g.neovide then
   vim.g.neovide_cursor_animation_length = 0
 end
 
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

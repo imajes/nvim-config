@@ -9,7 +9,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins", colorscheme = "tokyonight" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.coding.copilot" },
@@ -22,8 +22,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     -- import/override with your plugins
     { import = "plugins" },
+    -- specific [non-glob] files in local plugins
     { import = "plugins.langs.databases" },
-    { import = "plugins.langs.kitty" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -33,14 +33,24 @@ require("lazy").setup({
     -- have outdated releases, which may break your Neovim install.
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
-  },
-  install = {
     colorscheme = {
-      "tokyonight",
-      "habamax",
+      "tokyonight-moon",
     },
   },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  colorscheme = {
+    "tokyonight-moon",
+  },
+  install = {
+    missing = true,
+    colorscheme = {
+      "tokyonight-moon",
+    },
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+    frequency = 3600,
+  }, -- automatically check for plugin updates
   performance = {
     cache = {
       enabled = true,
