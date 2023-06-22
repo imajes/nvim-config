@@ -10,7 +10,7 @@ if vim.g.neovide then
   vim.g.neovide_remember_window_size = true
   vim.g.neovide_remember_window_position = true
 
-  vim.g.neovide_profiler = true
+  vim.g.neovide_profiler = false
 
   -- Helper function for transparency formatting
   local alpha = function()
