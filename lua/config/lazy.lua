@@ -6,26 +6,34 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+if vim.g.neovide then
+  vim.g.preferred_colorscheme = "monokai-pro"
+else
+  vim.g.preferred_colorscheme = "tokyonight-moon"
+end
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = vim.g.preferred_colorscheme } },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.coding.copilot" },
     { import = "lazyvim.plugins.extras.dap.core" },
-    { import = "lazyvim.plugins.extras.test.core" },
+    { import = "lazyvim.plugins.extras.editor.flash" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.ruby" },
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.test.core" },
     -- import/override with your plugins
     { import = "plugins" },
     -- specific [non-glob] files in local plugins
     { import = "plugins.langs.databases" },
     { import = "plugins.langs.rust" },
   },
+
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- if you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
@@ -34,24 +42,19 @@ require("lazy").setup({
     -- have outdated releases, which may break your Neovim install.
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
-    colorscheme = {
-      "tokyonight-moon",
-    },
   },
-  colorscheme = {
-    "tokyonight-moon",
-  },
+
   install = {
     missing = true,
-    colorscheme = {
-      "tokyonight-moon",
-    },
+    colorscheme = { "monokai-pro", "tokyonight" },
   },
+
   checker = {
     enabled = true,
     notify = false,
     frequency = 3600,
   }, -- automatically check for plugin updates
+
   performance = {
     cache = {
       enabled = true,
