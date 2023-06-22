@@ -24,6 +24,7 @@ require("lazy").setup({
     { import = "plugins" },
     -- specific [non-glob] files in local plugins
     { import = "plugins.langs.databases" },
+    { import = "plugins.langs.rust" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

@@ -13,7 +13,7 @@ set("i", "<C-e>", "<esc>$i<right>", { desc = "Move to line end" })
 set("n", "<C-e>", "$", { desc = "Move to line end" })
 
 -- select all
-set({ "i", "n", "v" }, "<D-a>", "ggVG", { desc = "Select all" })
+set({ "i", "n", "v" }, "<D-a>", "<ESC>ggVG", { desc = "Select all" })
 
 -- paste, copy, cut
 set("i", "<C-v>", "p", { desc = "Paste" })
