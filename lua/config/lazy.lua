@@ -16,7 +16,7 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = vim.g.preferred_colorscheme } },
-    { "folke/noice.nvim", enabled = false }, -- disabling for now
+    { "folke/noice.nvim", cond = not vim.g.neovide },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.coding.copilot" },
     { import = "lazyvim.plugins.extras.coding.yanky" },
@@ -30,7 +30,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.test.core" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.ui.mini-animate", cond = not vim.g.neovide },
     -- import/override with your plugins
     { import = "plugins" },
     -- specific [non-glob] files in local plugins
