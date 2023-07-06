@@ -10,7 +10,7 @@ return {
     dependencies = "kevinhwang91/promise-async",
     opts = {
       provider_selector = function(bufnr, filetype, _buftype)
-        return { "treesitter", "indent" }
+        return { "lsp", "indent" }
       end,
     },
   },
