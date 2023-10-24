@@ -56,7 +56,7 @@ vim.g.neovide_position_animation_length = 0
 vim.g.neovide_scroll_animation_length = 0.1
 vim.g.neovide_cursor_animation_length = 0.01
 
-vim.g.neovide_refresh_rate = 60
+vim.g.neovide_refresh_rate = 120
 -- vim.g.neovide_profiler = true
 
 -- Helper function for transparency formatting
