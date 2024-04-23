@@ -7,7 +7,7 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 if vim.g.neovide then
-  vim.g.preferred_colorscheme = "nightfox"
+  vim.g.preferred_colorscheme = "dawnfox"
 else
   vim.g.preferred_colorscheme = "noctis"
 end
@@ -63,7 +63,7 @@ require("lazy").setup({
 
   install = {
     missing = true,
-    colorscheme = { "nightfox", "monokai-pro", "tokyonight" },
+    colorscheme = { "dawnfox", "nightfox", "monokai-pro", "tokyonight" },
   },
 
   checker = {

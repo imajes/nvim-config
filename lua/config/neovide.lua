@@ -1,39 +1,10 @@
 -- https://neovide.dev/configuration.html
 --
+-- Note, some of these settings are now in ~/.config/neovide/config.toml
+--
 -- vim.o.guifont = "SauceCodePro NF Light:h18:#h-slight:#e-subpixelantialias"
-vim.o.guifont = "Fira Code Light:h18:#h-slight:#e-subpixelantialias"
-
+-- vim.o.guifont = "Fira Code Light:h18:#h-slight:#e-subpixelantialias"
 -- https://github.com/tonsky/FiraCode/wiki/How-to-enable-stylistic-sets
-
--- vim.g.neovide.font_defs = {
---   { "code_body",
---     {
---       family = "Fira Code",
---       weight = "Light",
---       size = 18,
---       bold = false,
---       italic = false,
---       edging = "subpixelantialias",
---       hinting = "slight",
---       features = { "zero", "cv02", "cv01", "ss01", "cv14", "ss08", "cv24", "ss06", "cv27", "ss07" },
---     }
---   },
---   { "buffer_tab_title",
---     {
---       family = "Fira Code",
---       weight = "Bold",
---       size = 16,
---       bold = true,
---       italic = false,
---       edging = "subpixelantialias",
---       hinting = "slight",
---       features = { "zero", "cv02", "cv01", "ss01", "cv14", "ss08", "cv24", "ss06", "cv27", "ss07" },
---     }
---   },
--- }
--- vim.o.guifont = "neovide_font:code_body,neovide_font:buffer_tab_title,fallback_font_normal_def"
---
---
 -- vim.g.neovide_font_features = { "zero", "cv02", "cv01", "ss01", "cv14", "ss08", "cv24", "ss06", "cv27", "ss07" },
 -- a g 0 /= <= >= != -> <- => := ... ++ -- :: // ** /* */ << >> && || ?? ::= \\ [] {. .} =~
 

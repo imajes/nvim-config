@@ -4,7 +4,8 @@
 
 local opt = vim.opt
 
-opt.bg = "light"
+-- should this get set in neovide context?
+-- opt.bg = "light"
 
 opt.autoread = true -- not sure, cloned
 opt.backup = false -- don't take backups
