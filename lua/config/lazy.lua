@@ -8,8 +8,10 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 if vim.g.neovide then
   vim.g.preferred_colorscheme = "dawnfox"
+  vim.opt.bg = "light"
 else
   vim.g.preferred_colorscheme = "noctis"
+  vim.opt.bg = "dark"
 end
 
 require("lazy").setup({

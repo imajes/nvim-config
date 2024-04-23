@@ -4,9 +4,6 @@
 
 local opt = vim.opt
 
--- should this get set in neovide context?
--- opt.bg = "light"
-
 opt.autoread = true -- not sure, cloned
 opt.backup = false -- don't take backups
 opt.hlsearch = true -- highlight all search terms
