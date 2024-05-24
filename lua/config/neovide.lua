@@ -9,10 +9,10 @@
 -- a g 0 /= <= >= != -> <- => := ... ++ -- :: // ** /* */ << >> && || ?? ::= \\ [] {. .} =~
 
 vim.g.neovide_scale_factor = 1.0
-vim.g.neovide_padding_top = 5
-vim.g.neovide_padding_bottom = 5
-vim.g.neovide_padding_right = 5
-vim.g.neovide_padding_left = -5
+vim.g.neovide_padding_top = 2
+vim.g.neovide_padding_bottom = 2
+vim.g.neovide_padding_right = 2
+vim.g.neovide_padding_left = 2
 
 vim.g.neovide_remember_window_size = true
 vim.g.neovide_remember_window_position = true
