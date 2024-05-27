@@ -18,7 +18,7 @@ return {
         log_path = vim.fn.expand("$HOME") .. "/.local/share/nvim/go-nvim.log",
         lsp_cfg = true,
         lsp_codelens = true,
-        lsp_diag_hdlr = true,
+        -- lsp_diag_hdlr = true,
         lsp_on_attach = true,
         run_in_floaterm = true,
         tag_transform = true,

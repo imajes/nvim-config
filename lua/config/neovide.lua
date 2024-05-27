@@ -1,13 +1,5 @@
 -- https://neovide.dev/configuration.html
 --
--- Note, some of these settings are now in ~/.config/neovide/config.toml
---
--- vim.o.guifont = "SauceCodePro NF Light:h18:#h-slight:#e-subpixelantialias"
--- vim.o.guifont = "Fira Code Light:h18:#h-slight:#e-subpixelantialias"
--- https://github.com/tonsky/FiraCode/wiki/How-to-enable-stylistic-sets
--- vim.g.neovide_font_features = { "zero", "cv02", "cv01", "ss01", "cv14", "ss08", "cv24", "ss06", "cv27", "ss07" },
--- a g 0 /= <= >= != -> <- => := ... ++ -- :: // ** /* */ << >> && || ?? ::= \\ [] {. .} =~
-
 vim.g.neovide_scale_factor = 1.0
 vim.g.neovide_padding_top = 2
 vim.g.neovide_padding_bottom = 2
@@ -18,7 +10,7 @@ vim.g.neovide_remember_window_size = true
 vim.g.neovide_remember_window_position = true
 
 -- dark/light mode
-vim.g.neovide_theme = "auto"
+-- vim.g.neovide_theme = "auto"
 
 -- vim.g.neovide_cursor_vfx_mode = "railgun"
 

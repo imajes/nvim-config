@@ -4,6 +4,8 @@
 
 local opt = vim.opt
 
+opt.bg = "dark"
+
 opt.autoread = true -- not sure, cloned
 opt.backup = false -- don't take backups
 opt.hlsearch = true -- highlight all search terms
