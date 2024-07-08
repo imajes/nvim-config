@@ -9,7 +9,8 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 if vim.g.neovide then
   vim.g.preferred_colorscheme = "duskfox"
 else
-  vim.g.preferred_colorscheme = "noctis"
+  vim.g.preferred_colorscheme = "dayfox"
+  -- vim.g.preferred_colorscheme = "noctis"
 end
 
 vim.print("about to setup lazy")
@@ -23,16 +24,16 @@ require("lazy").setup({
 
       opts = {
 
-      colorscheme = "duskfox",
-      -- colorscheme = function()
-      --   vim.print(" in the colorscheme function, in top")
-      --   require("duskfox").load()
-      --   -- if vim.g.neovide then
-      --   --   require("duskfox").load()
-      --   -- else
-      --   --   require("noctis").load()
-      --   -- end
-      -- end,
+        -- colorscheme = "dayfox",
+        -- colorscheme = function()
+        --   vim.print(" in the colorscheme function, in top")
+        --   require("duskfox").load()
+        --   -- if vim.g.neovide then
+        --   --   require("duskfox").load()
+        --   -- else
+        --   --   require("noctis").load()
+        --   -- end
+        -- end,
       },
     },
 
