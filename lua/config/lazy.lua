@@ -6,10 +6,20 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+ColorScheme = function()
+  vim.print(" in the colorscheme function, in top")
+  require("duskfox").load()
+  -- if vim.g.neovide then
+  --   require("duskfox").load()
+  -- else
+  --   require("noctis").load()
+  -- end
+end
+
 if vim.g.neovide then
   vim.g.preferred_colorscheme = "duskfox"
 else
-  vim.g.preferred_colorscheme = "dayfox"
+  vim.g.preferred_colorscheme = "duskfox"
   -- vim.g.preferred_colorscheme = "noctis"
 end
 
@@ -23,48 +33,81 @@ require("lazy").setup({
       import = "lazyvim.plugins",
 
       opts = {
-
-        -- colorscheme = "dayfox",
-        -- colorscheme = function()
-        --   vim.print(" in the colorscheme function, in top")
-        --   require("duskfox").load()
-        --   -- if vim.g.neovide then
-        --   --   require("duskfox").load()
-        --   -- else
-        --   --   require("noctis").load()
-        --   -- end
-        -- end,
+        colorscheme = vim.g.preferred_colorscheme,
       },
     },
 
-    -- { import = "plugins.colors" },
+    { import = "plugins.colors" },
 
     { "folke/noice.nvim" },
 
-    -- { import = "lazyvim.plugins.extras.coding.copilot" },
-    { import = "lazyvim.plugins.extras.coding.yanky" },
+    -- extras. managed here vs lazyvim.json for easier customization
+
+    -- load these first as they describe/inform UI/utils
+    { import = "lazyvim.plugins.extras.ui.alpha" },
+    { import = "lazyvim.plugins.extras.ui.edgy" },
+    { import = "lazyvim.plugins.extras.ui.mini-animate", cond = not vim.g.neovide },
+    { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
+    { import = "lazyvim.plugins.extras.ui.treesitter-context" },
+
+    { import = "lazyvim.plugins.extras.util.dot" },
+    { import = "lazyvim.plugins.extras.util.gitui" },
+    { import = "lazyvim.plugins.extras.util.mini-hipatterns", cond = not vim.g.neovide },
+    { import = "lazyvim.plugins.extras.util.octo" },
+    { import = "lazyvim.plugins.extras.util.project" },
+    { import = "lazyvim.plugins.extras.util.startuptime" },
+
     { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.dap.nlua" },
+
     { import = "lazyvim.plugins.extras.editor.aerial" },
+    { import = "lazyvim.plugins.extras.editor.dial" },
+    { import = "lazyvim.plugins.extras.editor.fzf" },
+    { import = "lazyvim.plugins.extras.editor.harpoon2" },
+    { import = "lazyvim.plugins.extras.editor.illuminate" },
+    { import = "lazyvim.plugins.extras.editor.inc-rename" },
+    { import = "lazyvim.plugins.extras.editor.leap" },
+    { import = "lazyvim.plugins.extras.editor.mini-diff" },
+    { import = "lazyvim.plugins.extras.editor.mini-files" },
+    { import = "lazyvim.plugins.extras.editor.mini-move" },
     { import = "lazyvim.plugins.extras.editor.navic" },
-    -- { import = "lazyvim.plugins.extras.lang.cmake" },
+    { import = "lazyvim.plugins.extras.editor.refactoring" },
+
+    -- these are code related
+    { import = "lazyvim.plugins.extras.coding.copilot" },
+    { import = "lazyvim.plugins.extras.coding.copilot-chat" },
+    { import = "lazyvim.plugins.extras.coding.mini-surround" },
+    { import = "lazyvim.plugins.extras.coding.yanky" },
+
+    { import = "lazyvim.plugins.extras.formatting.black" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
+
+    { import = "lazyvim.plugins.extras.lang.angular" },
+    { import = "lazyvim.plugins.extras.lang.ansible" },
+    { import = "lazyvim.plugins.extras.lang.clangd" },
+    { import = "lazyvim.plugins.extras.lang.clojure" },
     { import = "lazyvim.plugins.extras.lang.docker" },
     { import = "lazyvim.plugins.extras.lang.elixir" },
-    { import = "lazyvim.plugins.extras.lang.go" },
+    { import = "lazyvim.plugins.extras.lang.git" },
+    { import = "lazyvim.plugins.extras.lang.helm" },
+    { import = "lazyvim.plugins.extras.lang.java" },
     { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.kotlin" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.lang.prisma" },
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.ruby" },
     { import = "lazyvim.plugins.extras.lang.rust" },
-    -- { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.lang.scala" },
+    { import = "lazyvim.plugins.extras.lang.sql" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.terraform" },
-    { import = "lazyvim.plugins.extras.lang.typescript" },
-    { import = "lazyvim.plugins.extras.lang.yaml" },
+    { import = "lazyvim.plugins.extras.lang.thrift" },
+    { import = "lazyvim.plugins.extras.lang.toml" },
+
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+
     { import = "lazyvim.plugins.extras.test.core" },
-    { import = "lazyvim.plugins.extras.ui.alpha" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate", cond = not vim.g.neovide },
-    { import = "lazyvim.plugins.extras.util.mini-hipatterns", cond = not vim.g.neovide },
-    { import = "lazyvim.plugins.extras.util.project" },
 
     -- import/override with your plugins
     { import = "plugins" },
@@ -72,16 +115,6 @@ require("lazy").setup({
     { import = "plugins.langs.databases" },
     { import = "plugins.langs.go" },
   },
-
-  colorscheme = function()
-    vim.print(" in the colorscheme function, in top")
-    require("duskfox").load()
-    -- if vim.g.neovide then
-    --   require("duskfox").load()
-    -- else
-    --   require("noctis").load()
-    -- end
-  end,
 
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -95,25 +128,20 @@ require("lazy").setup({
 
     -- colorscheme can be a string like `catppuccin` or a function that will load the colorscheme
     ---@type string|fun()
-    colorscheme = function()
-      vim.print(" in the colorscheme function, in defaults")
-      require("duskfox").load()
-      -- if vim.g.neovide then
-      --   require("duskfox").load()
-      -- else
-      --   require("noctis").load()
-      -- end
-    end,
+    -- colorscheme = function()
+    --   vim.print(" in the colorscheme function, in defaults")
+    --   require("duskfox").load()
+    --   -- if vim.g.neovide then
+    --   --   require("duskfox").load()
+    --   -- else
+    --   --   require("noctis").load()
+    --   -- end
+    -- end,
   },
 
   install = {
     missing = true,
-    --   colorscheme = { "duskfox", "monokai-pro", "tokyonight" },
-    colorscheme = { "duskfox" },
-    -- colorscheme = function()
-    --   vim.print(" in the colorscheme function, in install")
-    --   require("duskfox").load()
-    -- end,
+    colorscheme = { "duskfox", "nightfox", "dayfox" },
   },
 
   checker = {
