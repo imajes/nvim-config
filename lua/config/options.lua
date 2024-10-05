@@ -20,3 +20,13 @@ opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrea
 opt.foldlevelstart = 99
 opt.foldenable = true
 opt.wrap = true
+
+-- override the python interpreter
+local mise_python = vim.fn.systemlist({ "mise", "which", "python" })[1]
+-- print(vim.inspect(mise_python))
+vim.g.python3_host_prog = mise_python
+
+-- override the ruby interpreter
+local mise_ruby = vim.fn.systemlist({ "mise", "which", "neovim-ruby-host" })[1]
+-- print(vim.inspect(mise_python))
+vim.g.ruby_host_prog = mise_ruby

@@ -6,6 +6,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+-- integrate mise to provide shims
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
+
 ColorScheme = function()
   vim.print(" in the colorscheme function, in top")
   require("duskfox").load()
@@ -46,13 +49,15 @@ require("lazy").setup({
     -- load these first as they describe/inform UI/utils
     { import = "lazyvim.plugins.extras.ui.alpha" },
     { import = "lazyvim.plugins.extras.ui.edgy" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate", cond = not vim.g.neovide },
+    -- { import = "lazyvim.plugins.extras.ui.mini-animate", cond = not vim.g.neovide },
+    { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
 
     { import = "lazyvim.plugins.extras.util.dot" },
     { import = "lazyvim.plugins.extras.util.gitui" },
-    { import = "lazyvim.plugins.extras.util.mini-hipatterns", cond = not vim.g.neovide },
+    -- { import = "lazyvim.plugins.extras.util.mini-hipatterns", cond = not vim.g.neovide },
+    { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "lazyvim.plugins.extras.util.octo" },
     { import = "lazyvim.plugins.extras.util.project" },
     { import = "lazyvim.plugins.extras.util.startuptime" },
