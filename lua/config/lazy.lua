@@ -9,20 +9,10 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- integrate mise to provide shims
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
-ColorScheme = function()
-  vim.print(" in the colorscheme function, in top")
-  require("duskfox").load()
-  -- if vim.g.neovide then
-  --   require("duskfox").load()
-  -- else
-  --   require("noctis").load()
-  -- end
-end
-
 if vim.g.neovide then
-  vim.g.preferred_colorscheme = "duskfox"
+  vim.g.preferred_colorscheme = "everforest"
 else
-  vim.g.preferred_colorscheme = "duskfox"
+  vim.g.preferred_colorscheme = "gruvbox-material"
   -- vim.g.preferred_colorscheme = "noctis"
 end
 
@@ -36,7 +26,7 @@ require("lazy").setup({
       import = "lazyvim.plugins",
 
       opts = {
-        colorscheme = vim.g.preferred_colorscheme,
+        -- colorscheme = vim.g.preferred_colorscheme,
       },
     },
 
@@ -44,6 +34,23 @@ require("lazy").setup({
 
     { "folke/noice.nvim" },
 
+    -- this didn't execute inside of plugins, so force it up here first
+    {
+      "f-person/auto-dark-mode.nvim",
+      lazy = false,
+      priority = 10000,
+      opts = {
+        update_interval = 1000,
+        set_dark_mode = function()
+          vim.api.nvim_set_option_value("background", "dark", {})
+          vim.cmd("colorscheme duskfox")
+        end,
+        set_light_mode = function()
+          vim.api.nvim_set_option_value("background", "light", {})
+          vim.cmd("colorscheme dayfox")
+        end,
+      },
+    },
     -- extras. managed here vs lazyvim.json for easier customization
 
     -- load these first as they describe/inform UI/utils
@@ -130,18 +137,6 @@ require("lazy").setup({
     -- have outdated releases, which may break your Neovim install.
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
-
-    -- colorscheme can be a string like `catppuccin` or a function that will load the colorscheme
-    ---@type string|fun()
-    -- colorscheme = function()
-    --   vim.print(" in the colorscheme function, in defaults")
-    --   require("duskfox").load()
-    --   -- if vim.g.neovide then
-    --   --   require("duskfox").load()
-    --   -- else
-    --   --   require("noctis").load()
-    --   -- end
-    -- end,
   },
 
   install = {
