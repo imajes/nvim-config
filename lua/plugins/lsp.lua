@@ -12,6 +12,7 @@ return {
         },
         sorbet = {
           mason = false,
+          enabled = false,
           cmd = {
             "srb",
             "tc",

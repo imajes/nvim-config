@@ -5,11 +5,13 @@
 local set = vim.keymap.set
 
 -- move to beginning of line
-set("i", "<C-a>", "<esc>0i", { desc = "Move to line beginning" })
+set("i", "<C-a>", "<C-o>^", { silent = true })
+-- set("i", "<C-a>", "<esc>0i", { desc = "Move to line beginning" })
 set("n", "<C-a>", "0", { desc = "Move to line beginning" })
 
 -- move to end of line
-set("i", "<C-e>", "<esc>$i<right>", { desc = "Move to line end" })
+set("i", "<C-e>", "<C-o>$", { silent = true })
+-- set("i", "<C-e>", "<esc>$i<right>", { desc = "Move to line end" })
 set("n", "<C-e>", "$", { desc = "Move to line end" })
 
 -- select all

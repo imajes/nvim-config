@@ -16,7 +16,6 @@ else
   -- vim.g.preferred_colorscheme = "noctis"
 end
 
-vim.print("about to setup lazy")
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -43,11 +42,11 @@ require("lazy").setup({
         update_interval = 1000,
         set_dark_mode = function()
           vim.api.nvim_set_option_value("background", "dark", {})
-          vim.cmd("colorscheme duskfox")
+          vim.cmd("colorscheme nightfox")
         end,
         set_light_mode = function()
           vim.api.nvim_set_option_value("background", "light", {})
-          vim.cmd("colorscheme dayfox")
+          vim.cmd("colorscheme duskfox")
         end,
       },
     },
@@ -84,7 +83,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.editor.mini-move" },
     { import = "lazyvim.plugins.extras.editor.navic" },
     { import = "lazyvim.plugins.extras.editor.refactoring" },
-    { import = "lazyvim.plugins.extras.editor.telescope" },
+    -- { import = "lazyvim.plugins.extras.editor.telescope" },
 
     -- these are code related
     { import = "lazyvim.plugins.extras.coding.blink" },
