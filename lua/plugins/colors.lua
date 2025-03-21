@@ -125,6 +125,8 @@ return {
     lazy = true,
   },
 
+  { "kepano/flexoki-neovim", lazy = false },
+  { "mhartington/oceanic-next", lazy = true },
   { "AlexvZyl/nordic.nvim", lazy = true },
   { "EdenEast/nightfox.nvim", lazy = false },
   { "LunarVim/horizon.nvim", lazy = true },
