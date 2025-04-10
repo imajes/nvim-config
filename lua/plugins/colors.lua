@@ -61,6 +61,44 @@ return {
     lazy = true,
   },
 
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("cyberdream").setup({
+        variant = "auto",
+        transparent = true,
+        borderless_pickers = true,
+        cache = true,
+      })
+    end,
+  },
+
+  {
+    "uloco/bluloco.nvim",
+    lazy = false,
+    priority = 1000,
+    dependencies = { "rktjmp/lush.nvim" },
+    config = function()
+      require("bluloco").setup({
+        style = "auto", -- "auto" | "dark" | "light"
+        transparent = true,
+        italics = false,
+        terminal = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
+        guicursor = true,
+      })
+    end,
+  },
+
+  {
+    "savq/melange-nvim",
+    -- config = function()
+    --   require("palenightfall").setup()
+    -- end,
+    lazy = true,
+  },
+
   -- {
   --   "noorwachid/nvim-nightsky",
   --   config = function()

@@ -9,12 +9,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- integrate mise to provide shims
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
--- if vim.g.neovide then
---   vim.g.preferred_colorscheme = "everforest"
--- else
---   vim.g.preferred_colorscheme = "gruvbox-material"
---   -- vim.g.preferred_colorscheme = "noctis"
--- end
+vim.g.color_picker = require("config.color_picker")
 
 require("lazy").setup({
   spec = {
@@ -42,13 +37,12 @@ require("lazy").setup({
         update_interval = 1000,
         set_dark_mode = function()
           vim.api.nvim_set_option_value("background", "dark", {})
-          vim.cmd("colorscheme duskfox")
+          vim.g.color_picker.dark()
         end,
         set_light_mode = function()
-          vim.api.nvim_set_option_value("background", "light", {})
-          vim.cmd("colorscheme duskfox")
-          -- vim.api.nvim_set_option_value("background", "dark", {})
-          -- vim.cmd("colorscheme darkfox")
+          -- vim.api.nvim_set_option_value("background", "light", {})
+          -- vim.cmd(string.format("colorscheme %s", vim.g.preferred_light_colorscheme))
+          vim.g.color_picker.light()
         end,
       },
     },
