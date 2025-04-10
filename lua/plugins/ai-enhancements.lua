@@ -7,7 +7,7 @@ return {
     event = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
     opts = {
-
+      debug = true,
       ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
       provider = "claude", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
       -- WARNING: Since auto-suggestions are a high-frequency operation and therefore expensive,
@@ -16,7 +16,7 @@ return {
       auto_suggestions_provider = "claude",
       cursor_applying_provider = "groq", -- In this example, use Groq for applying, but you can also use any provider you want.
       behaviour = {
-        auto_suggestions = true,
+        auto_suggestions = false, -- i think this is running in the background to auto suggest. lets not
         support_paste_from_clipboard = true,
         enable_cursor_planning_mode = true,
         enable_claude_text_editor_tool_mode = true,
@@ -24,7 +24,6 @@ return {
       vendors = {
         groq = { -- define groq provider
           __inherited_from = "openai",
-          api_key_name = "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",
           endpoint = "https://api.groq.com/openai/v1/",
           model = "llama-3.3-70b-versatile",
           max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
@@ -41,9 +40,9 @@ return {
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-3-7-sonnet-latest",
-        timeout = 60000, -- Timeout in milliseconds
+        timeout = 120000, -- Timeout in milliseconds
         temperature = 0,
-        max_tokens = 4096,
+        max_tokens = 16384,
         disable_tools = true,
       },
     },
