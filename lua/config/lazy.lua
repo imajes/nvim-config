@@ -90,10 +90,14 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.ai.copilot" },
     -- { import = "lazyvim.plugins.extras.ai.copilot-chat" },
 
-    { import = "lazyvim.plugins.extras.formatting.biome" },
+    -- formatting & linting
+    -- { import = "lazyvim.plugins.extras.formatting.biome" },
     -- { import = "lazyvim.plugins.extras.formatting.black" },
-    -- { import = "lazyvim.plugins.extras.formatting.prettier" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
 
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+
+    -- langs
     { import = "lazyvim.plugins.extras.lang.angular" },
     { import = "lazyvim.plugins.extras.lang.ansible" },
     { import = "lazyvim.plugins.extras.lang.clangd" },
@@ -121,9 +125,7 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.vue" },
     { import = "lazyvim.plugins.extras.lang.yaml" },
 
-    -- { import = "lazyvim.plugins.extras.linting.eslint" },
-
-    { import = "lazyvim.plugins.extras.test.core" },
+    -- { import = "lazyvim.plugins.extras.test.core" },
 
     -- import/override with your plugins
     { import = "plugins" },
