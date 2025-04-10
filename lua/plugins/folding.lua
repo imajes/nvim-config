@@ -1,21 +1,6 @@
 -- Section: UI, folding
 -- ------------------------------------------
 
--- return {
---   {
---     -- https://github.com/kevinhwang91/nvim-ufo
---     "kevinhwang91/nvim-ufo",
---     version = "*",
---     lazy = false,
---     dependencies = "kevinhwang91/promise-async",
---     opts = {
---       provider_selector = function(bufnr, filetype, _buftype)
---         return { "lsp", "indent" }
---       end,
---     },
---   },
--- }
-
 return {
   "kevinhwang91/nvim-ufo",
   dependencies = "kevinhwang91/promise-async",
@@ -31,6 +16,13 @@ return {
     },
     {
       "zm",
+      function()
+        require("ufo").closeAllFolds()
+      end,
+      desc = "󱃄 Close all folds",
+    },
+    {
+      "zM",
       function()
         require("ufo").closeAllFolds()
       end,
@@ -86,12 +78,26 @@ return {
     -- them to 99.
     vim.opt.foldlevel = 99
     vim.opt.foldlevelstart = 99
+
+    -- Tell the lsp server the capability of foldingRange,
+    -- Neovim hasn't added foldingRange to default capabilities, users must add it manually
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    }
+    local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
+    for _, ls in ipairs(language_servers) do
+      require("lspconfig")[ls].setup({
+        capabilities = capabilities,
+        -- you can add other fields for setting up lsp server in this table
+      })
+    end
   end,
   opts = {
     -- when opening the buffer, close these fold kinds
     close_fold_kinds_for_ft = {
-      -- default = { "imports", "comment" },
-      default = { "comment" },
+      default = { "imports", "comment" },
       json = { "array" },
       markdown = {}, -- avoid everything becoming folded
       toml = {},
