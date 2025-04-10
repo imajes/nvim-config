@@ -4,8 +4,6 @@
 
 local opt = vim.opt
 
-opt.bg = "dark"
-
 opt.autoread = true -- not sure, cloned
 opt.backup = false -- don't take backups
 opt.hlsearch = true -- highlight all search terms
@@ -15,11 +13,10 @@ opt.showtabline = 2 -- https://medium.com/usevim/vim-101-decoding-tab-titles-e89
 opt.smarttab = true -- sw at the start of the line, sts everywhere else
 opt.softtabstop = 2 -- Set soft tab override
 opt.sidescrolloff = 0 -- set sidescrolloff
-opt.foldcolumn = "1" -- '0' is not bad
-opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-opt.foldlevelstart = 99
-opt.foldenable = true
 opt.wrap = true
+
+-- this is recommended by/from avante.nvim:
+opt.laststatus = 3
 
 -- override the python interpreter
 local mise_python = vim.fn.systemlist({ "mise", "which", "python" })[1]
@@ -63,3 +60,34 @@ end
 vim.keymap.set("n", "<Leader>ml", function()
   append_modeline()
 end, { noremap = true, silent = true })
+
+---@param jumpCount number
+local function jumpWithVirtLineDiags(jumpCount)
+  pcall(vim.api.nvim_del_augroup_by_name, "jumpWithVirtLineDiags") -- prevent autocmd for repeated jumps
+
+  vim.diagnostic.jump({ count = jumpCount })
+
+  local initialVirtTextConf = vim.diagnostic.config().virtual_text
+  vim.diagnostic.config({
+    virtual_text = false,
+    virtual_lines = { current_line = true },
+  })
+
+  vim.defer_fn(function() -- deferred to not trigger by jump itself
+    vim.api.nvim_create_autocmd("CursorMoved", {
+      desc = "User(once): Reset diagnostics virtual lines",
+      once = true,
+      group = vim.api.nvim_create_augroup("jumpWithVirtLineDiags", {}),
+      callback = function()
+        vim.diagnostic.config({ virtual_lines = false, virtual_text = initialVirtTextConf })
+      end,
+    })
+  end, 1)
+end
+
+vim.keymap.set("n", "ge", function()
+  jumpWithVirtLineDiags(1)
+end, { desc = "󰒕 Next diagnostic" })
+vim.keymap.set("n", "gE", function()
+  jumpWithVirtLineDiags(-1)
+end, { desc = "󰒕 Prev diagnostic" })
