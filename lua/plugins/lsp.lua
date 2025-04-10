@@ -4,6 +4,21 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        -- typescript/javascript/etc
+        eslint = {
+          mason = false,
+        },
+        vtsls = {
+          mason = false,
+        },
+        jsonls = {
+          mason = false,
+        },
+        angularls = {
+          mason = false,
+          enabled = true,
+        },
+        -- ruby etc
         rubocop = {
           mason = false,
         },
