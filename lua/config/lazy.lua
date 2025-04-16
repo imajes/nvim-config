@@ -42,7 +42,9 @@ require("lazy").setup({
         set_light_mode = function()
           -- vim.api.nvim_set_option_value("background", "light", {})
           -- vim.cmd(string.format("colorscheme %s", vim.g.preferred_light_colorscheme))
-          vim.g.color_picker.light()
+          -- vim.g.color_picker.light()
+          -- vim.cmd.colorscheme("equilibrium-gray-light")
+          vim.cmd.colorscheme("dayfox")
         end,
       },
     },
