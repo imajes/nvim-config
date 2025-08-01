@@ -9,7 +9,7 @@ return {
     opts = {
       debug = false,
       ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-      provider = "claude", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
+      provider = "openai", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
       -- WARNING: Since auto-suggestions are a high-frequency operation and therefore expensive,
       -- currently designating it as `copilot` provider is dangerous because: https://github.com/yetone/avante.nvim/issues/1048
       -- Of course, you can reduce the request frequency by increasing `suggestion.debounce`.
@@ -21,29 +21,36 @@ return {
         enable_cursor_planning_mode = true,
         enable_claude_text_editor_tool_mode = true,
       },
-      vendors = {
+      providers = {
         groq = { -- define groq provider
           __inherited_from = "openai",
+          api_key_name = "GROQ_API_KEY",
           endpoint = "https://api.groq.com/openai/v1/",
           model = "llama-3.3-70b-versatile",
-          max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+          extra_request_body = {
+            max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+          },
         },
-      },
-      openai = {
-        endpoint = "https://api.openai.com/v1",
-        model = "o3-mini", -- your desired model (or use gpt-4o, etc.)
-        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-        temperature = 0,
-        max_completion_tokens = 16384, -- Increase this to include reasoning tokens (for reasoning models)
-        reasoning_effort = "high", -- low|medium|high, only used for reasoning models
-      },
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-3-7-sonnet-latest",
-        timeout = 120000, -- Timeout in milliseconds
-        temperature = 0,
-        max_tokens = 16384,
-        disable_tools = false,
+        openai = {
+          endpoint = "https://api.openai.com/v1",
+          model = "o3", -- your desired model (or use gpt-4o, etc.)
+          timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+          extra_request_body = {
+            reasoning_effort = "high", -- low|medium|high, only used for reasoning models
+            max_completion_tokens = 16384, -- Increase this to include reasoning tokens (for reasoning models)
+            temperature = 0,
+          },
+        },
+        claude = {
+          endpoint = "https://api.anthropic.com",
+          model = "claude-3-7-sonnet-latest",
+          timeout = 120000, -- Timeout in milliseconds
+          disable_tools = false,
+          extra_request_body = {
+            temperature = 0,
+            max_tokens = 16384,
+          },
+        },
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`

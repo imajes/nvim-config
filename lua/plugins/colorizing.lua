@@ -1,6 +1,5 @@
 -- colorize, well, colors
 return {
-
   {
     "catgoose/nvim-colorizer.lua",
     event = "LazyFile",

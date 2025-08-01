@@ -40,11 +40,11 @@ require("lazy").setup({
           vim.g.color_picker.dark()
         end,
         set_light_mode = function()
-          -- vim.api.nvim_set_option_value("background", "light", {})
+          vim.api.nvim_set_option_value("background", "light", {})
+          vim.g.color_picker.light()
           -- vim.cmd(string.format("colorscheme %s", vim.g.preferred_light_colorscheme))
-          -- vim.g.color_picker.light()
           -- vim.cmd.colorscheme("equilibrium-gray-light")
-          vim.cmd.colorscheme("dayfox")
+          -- vim.cmd.colorscheme("dayfox")
         end,
       },
     },
@@ -59,6 +59,7 @@ require("lazy").setup({
 
     { import = "lazyvim.plugins.extras.util.dot" },
     { import = "lazyvim.plugins.extras.util.gitui" },
+
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
     { import = "lazyvim.plugins.extras.util.octo" },
     { import = "lazyvim.plugins.extras.util.project" },
@@ -115,7 +116,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.prisma" },
     { import = "lazyvim.plugins.extras.lang.python" },
-    { import = "lazyvim.plugins.extras.lang.ruby" },
+    -- { import = "lazyvim.plugins.extras.lang.ruby" },
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.scala" },
     { import = "lazyvim.plugins.extras.lang.sql" },
@@ -132,6 +133,7 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins" },
     -- specific [non-glob] files in local plugins
+    { import = "plugins.langs.ruby" },
     { import = "plugins.langs.databases" },
     { import = "plugins.langs.go" },
   },
