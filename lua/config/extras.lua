@@ -6,3 +6,5 @@ require("config.filetypes")
 require("config.folding")
 
 require("config.debug")
+
+require("config.remote_clipboards")
