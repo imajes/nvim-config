@@ -12,6 +12,7 @@ return {
         endwise = { enable = true },
       },
     },
+    ft = { "ruby" },
   },
 
   -- https://github.com/RRethy/nvim-treesitter-textsubjects

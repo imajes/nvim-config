@@ -6,10 +6,6 @@ if lazyvim_docs then
 end
 
 local lsp = vim.g.lazyvim_ruby_lsp or "ruby_lsp"
-if vim.fn.has("nvim-0.10") == 0 then
-  -- ruby_lsp does not work well with Neovim < 0.10
-  lsp = vim.g.lazyvim_ruby_lsp
-end
 local formatter = vim.g.lazyvim_ruby_formatter or "rubocop"
 
 return {
@@ -21,20 +17,16 @@ return {
   end,
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "ruby" } },
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = true,
-        },
-        indent = {
-          enable = false,
-        },
-        endwise = {
-          enable = true,
-        },
-      })
+    -- LazyVim already pins this to the main branch & sets up TS.setup() for you
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "ruby" }) -- add other ruby-adjacent grammars if you use them: "embedded_template", "yaml"
+
+      opts.indent = opts.indent or {}
+      opts.indent.enable = false
+
+      opts.highlight = opts.highlight or {}
+      opts.highlight.additional_vim_regex_highlighting = { "ruby" }
     end,
   },
   {
