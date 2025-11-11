@@ -101,7 +101,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.linting.eslint" },
 
     -- langs
-    { import = "lazyvim.plugins.extras.lang.angular" },
+    -- { import = "lazyvim.plugins.extras.lang.angular" },
     { import = "lazyvim.plugins.extras.lang.ansible" },
     { import = "lazyvim.plugins.extras.lang.clangd" },
     -- { import = "lazyvim.plugins.extras.lang.clojure" },
@@ -129,6 +129,10 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.yaml" },
 
     -- { import = "lazyvim.plugins.extras.test.core" },
+
+    -- this is to improve the basedpyright setup
+    { import = "plugins.lsp.basedpyright" },
+    { import = "plugins.lsp.shellcheck" },
 
     -- import/override with your plugins
     { import = "plugins" },

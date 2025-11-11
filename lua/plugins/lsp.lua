@@ -5,18 +5,18 @@ return {
     opts = {
       servers = {
         -- typescript/javascript/etc
-        eslint = {
-          mason = false,
-        },
-        vtsls = {
-          mason = false,
-        },
-        jsonls = {
-          mason = false,
-        },
+        -- eslint = {
+        --   mason = false,
+        -- },
+        -- vtsls = {
+        --   mason = false,
+        -- },
+        -- jsonls = {
+        --   mason = false,
+        -- },
         angularls = {
           mason = false,
-          enabled = true,
+          enabled = false,
         },
         -- ruby etc
         rubocop = {

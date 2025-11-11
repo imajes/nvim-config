@@ -23,6 +23,9 @@ local mise_python = vim.fn.systemlist({ "mise", "which", "python" })[1]
 -- print(vim.inspect(mise_python))
 vim.g.python3_host_prog = mise_python
 
+-- switch the lsp for python to basedpyright
+vim.g.lazyvim_python_lsp = "basedpyright"
+
 -- override the ruby interpreter
 local mise_ruby = vim.fn.systemlist({ "mise", "which", "neovim-ruby-host" })[1]
 -- print(vim.inspect(mise_python))
