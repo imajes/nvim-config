@@ -1,9 +1,8 @@
-tt.*
-.tests
-doc/tags
-debug
-.repro
-foo.*
+# Local editor metadata
 *.log
-data
-lazy-lock.json
+/.luarc.json
+/.DS_Store
+/doc/tags
+
+# Local scratch space
+/scratch/
