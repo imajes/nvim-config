@@ -17,24 +17,16 @@ set("n", "<C-e>", "$", { desc = "Move to line end" })
 -- select all
 set({ "i", "n", "v" }, "<D-a>", "<ESC>ggVG", { desc = "Select all" })
 
--- paste, copy, cut
-set("i", "<C-v>", "p", { desc = "Paste" })
-set("i", "<C-c>", "y", { desc = "Copy" })
-set("i", "<C-x>", "y", { desc = "Cut" })
-
 if vim.g.neovide then
   vim.g.neovide_input_use_logo = 1 -- enable use of the logo (cmd) key
-  vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
-  vim.keymap.set("v", "<D-c>", '"+y') -- Copy
-  vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
-  vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
-  vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
-  vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
 end
 
--- Allow clipboard copy paste in neovim
-vim.g.neovide_input_use_logo = 1
-vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+-- Support logo-key shortcuts in environments that forward <D-...> to Neovim.
+set({ "i", "n", "s", "x" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+set("n", "<D-c>", '"+yy', { desc = "Copy Line" })
+set("v", "<D-c>", '"+y', { desc = "Copy" })
+set("n", "<D-v>", '"+P', { desc = "Paste" })
+set("v", "<D-v>", '"+P', { desc = "Paste" })
+set("c", "<D-v>", "<C-R>+", { desc = "Paste" })
+set("i", "<D-v>", "<C-r>+", { desc = "Paste" })
+set("t", "<D-v>", "<C-R>+", { desc = "Paste" })
