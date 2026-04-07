@@ -78,21 +78,6 @@ return {
     -- them to 99.
     vim.opt.foldlevel = 99
     vim.opt.foldlevelstart = 99
-
-    -- Tell the lsp server the capability of foldingRange,
-    -- Neovim hasn't added foldingRange to default capabilities, users must add it manually
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.foldingRange = {
-      dynamicRegistration = false,
-      lineFoldingOnly = true,
-    }
-    local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
-    for _, ls in ipairs(language_servers) do
-      require("lspconfig")[ls].setup({
-        capabilities = capabilities,
-        -- you can add other fields for setting up lsp server in this table
-      })
-    end
   end,
   opts = {
     -- when opening the buffer, close these fold kinds
@@ -106,7 +91,7 @@ return {
     open_fold_hl_timeout = 800,
     provider_selector = function(_bufnr, ft, _buftype)
       -- ufo accepts only two kinds as priority, see https://github.com/kevinhwang91/nvim-ufo/issues/256
-      local lspWithOutFolding = { "markdown", "zsh", "bash", "css", "python", "json" }
+      local lspWithOutFolding = { "markdown", "zsh", "bash" }
       if vim.tbl_contains(lspWithOutFolding, ft) then
         return { "treesitter", "indent" }
       end
