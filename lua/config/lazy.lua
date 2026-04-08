@@ -6,6 +6,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+-- Load LSP defaults that LazyVim extras read while building the plugin spec.
+require("plugins.lsp.defaults")
+
 -- integrate mise to provide shims
 --vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
 
@@ -134,10 +137,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.yaml" },
 
     { import = "lazyvim.plugins.extras.test.core" },
-
-    -- this is to improve the basedpyright setup
-    { import = "plugins.lsp.basedpyright" },
-    { import = "plugins.lsp.shellcheck" },
 
     -- import/override with your local plugin modules
     { import = "plugins" },

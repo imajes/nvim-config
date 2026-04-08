@@ -18,5 +18,4 @@ opt.wrap = true
 -- use a global statusline across window splits
 opt.laststatus = 3
 
-require("config.lsp_defaults")
 require("config.host_providers").setup_deferred()
