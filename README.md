@@ -19,6 +19,7 @@ Some notable customizations currently in the tree:
 - automatic dark/light colorscheme switching
 - only the Nightfox family is exposed eagerly for colorscheme selection and preview; other theme plugins stay lazy until explicitly enabled in `lua/plugins/colors.lua`
 - a `snacks.nvim` dashboard with a boxed two-pane layout and an optional terminal-rendered header
+- the dashboard vendors the `rebel.tlf` toilet font under `fonts/` so the terminal header does not depend on a machine-local font checkout
 - extra LSP tuning for `basedpyright`, shellcheck integration, Ruby, and Go, with SQL/database support coming from the LazyVim SQL extra
 - SSH-aware clipboard adjustments for remote sessions
 - custom diagnostic navigation helpers
@@ -88,6 +89,8 @@ The current layout is Lua-first:
   - helper scripts used by the floating-window debugging workflow
 - `after/`
   - filetype-specific overrides loaded after startup
+- `fonts/`
+  - repo-local toilet/figlet fonts used by the dashboard header
 - `lazyvim.json`
   - LazyVim metadata and selected extras
 - `lazy-lock.json`
@@ -102,7 +105,7 @@ The effective startup path is:
 3. LazyVim base plugins and selected extras
 4. local imports from `lua/config/*` and `lua/plugins/*`
 
-Notable startup-visible behavior includes the custom Snacks dashboard from `lua/config/dashboard.lua`, which prefers a terminal-rendered "hack the planet" header when the local `toilet` plus `lolcrab` toolchain is available and falls back to raw text when it is not.
+Notable startup-visible behavior includes the custom Snacks dashboard from `lua/config/dashboard.lua`, which prefers a terminal-rendered "hack the planet" header when `toilet`, `lolcrab`, and the vendored `fonts/rebel.tlf` asset are available and falls back to raw text when they are not.
 
 This means most behavior in this repo is defined by:
 
