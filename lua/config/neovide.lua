@@ -9,7 +9,7 @@ vim.g.neovide_padding_left = 2
 vim.g.neovide_remember_window_size = true
 vim.g.neovide_remember_window_position = true
 
--- dark/light mode
+-- dark/light mode https://neovide.dev/configuration.html#theme
 -- vim.g.neovide_theme = "auto"
 
 -- cursor configuration
@@ -23,6 +23,9 @@ vim.g.neovide_cursor_vfx_opacity = 50.0
 vim.g.neovide_cursor_vfx_particle_lifetime = 2.5
 vim.g.neovide_cursor_vfx_particle_density = 25.0
 vim.g.neovide_cursor_vfx_particle_speed = 75.0
+
+-- disable showing the cursor when typing
+vim.g.neovide_hide_mouse_when_typing = true
 
 -- this is the anim which shows on buffer load etc; keep it short because it's odd
 -- vim.g.neovide_position_animation_length = 0
