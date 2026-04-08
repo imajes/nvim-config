@@ -1,12 +1,30 @@
 local dashboard_width = 65
 local dashboard_pane_gap = 5
 local dashboard_layout_width = dashboard_width * 2 + dashboard_pane_gap
-local dashboard_header_clearance = 15
+local dashboard_header_clearance = 18
 local header_terminal_height = 14
 local header_terminal_width = dashboard_layout_width + 4
-local left_pane_guard_lines = 0
+local left_pane_guard_lines = 1
 local header_font_dir = "/Users/james/src/fonts/figlet-fonts"
 local header_phrase = " hack the planet "
+local header_gradients = {
+  light = { "viridis", "magma", "inferno", "cividis", "cool", "lolcat", "rainbow", "sinebow", "warm" },
+  dark = {
+    "plasma",
+    "cool",
+    "cividis",
+    "fruits",
+    "lolcat",
+    "rainbow",
+    "rd-yl-gn",
+    "sinebow",
+    "spectral",
+    "warm",
+    "magma",
+    "inferno",
+  },
+}
+local selected_header_gradients = {}
 local show_git_status = false
 
 local function in_git_repo()
@@ -22,7 +40,14 @@ local function use_terminal_header()
 end
 
 local function header_gradient()
-  return vim.o.background == "dark" and "magma" or "cool"
+  local background = vim.o.background == "dark" and "dark" or "light"
+  if not selected_header_gradients[background] then
+    local gradients = header_gradients[background]
+    local uv = vim.uv or vim.loop
+    local index = (uv.hrtime() % #gradients) + 1
+    selected_header_gradients[background] = gradients[index]
+  end
+  return selected_header_gradients[background]
 end
 
 local function strwidth(text)
@@ -142,7 +167,7 @@ local function header_command()
     "|",
     lolcrab_cmd,
     ";",
-    "sleep 3600",
+    "print '\n\n\n'",
   }, " ")
 end
 
