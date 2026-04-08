@@ -9,6 +9,7 @@ The configuration is centered around a LazyVim base, a broad set of LazyVim extr
 - Lazy bootstrapping via `lazy.nvim`
 - A large set of LazyVim extras for editor UX, debugging, formatting, linting, and language support
 - Custom plugin specs under `lua/plugins/`
+- Parked plugin specs kept as `*.disabled` so they stay out of the active load path until intentionally restored
 - Core behavior overrides under `lua/config/`
 - Extra Lua utilities under `lua/utils/`
 - A separate floating-window debug harness in `lua/lua-float-debug.lua`
@@ -17,7 +18,7 @@ Some notable customizations currently in the tree:
 
 - automatic dark/light colorscheme switching
 - only the Nightfox family is exposed eagerly for colorscheme selection and preview; other theme plugins stay lazy until explicitly enabled in `lua/plugins/colors.lua`
-- a `snacks.nvim` dashboard with a boxed two-pane layout, git-aware footer content, and an optional terminal-rendered header
+- a `snacks.nvim` dashboard with a boxed two-pane layout and an optional terminal-rendered header
 - extra LSP tuning for `basedpyright`, shellcheck integration, Ruby, and Go, with SQL/database support coming from the LazyVim SQL extra
 - SSH-aware clipboard adjustments for remote sessions
 - custom diagnostic navigation helpers
@@ -34,8 +35,8 @@ Minimum practical requirements for this setup:
 Optional but currently assumed by parts of the config:
 
 - `mise`
-  - used to resolve the Python provider (`python3_host_prog`)
-  - used to resolve the Ruby provider (`ruby_host_prog`)
+  - used to resolve the Python provider (`python3_host_prog`) on first Python filetype use
+  - used to resolve the Ruby provider (`ruby_host_prog`) on first Ruby filetype use
 - language-specific tools installed through Mason, system packages, or local toolchains depending on the language you use
 
 ## Installation
@@ -77,7 +78,8 @@ The current layout is Lua-first:
   - examples: options, keymaps, autocmds, dashboard, folding, filetypes, remote clipboard handling
 - `lua/plugins/`
   - local plugin specs and overrides layered on top of LazyVim
-  - includes UI, editing, git, LSP, movement, colors, Trouble, Treesitter, and language-specific modules
+  - includes UI, editing, LSP, movement, colors, Trouble, Treesitter, and language-specific modules
+  - parked specs use the `*.disabled` suffix and are intentionally kept out of the active import graph
 - `lua/plugins/lsp/`
   - focused LSP tuning modules
 - `lua/plugins/langs/`
@@ -142,7 +144,7 @@ This repo contains environment-specific behavior:
 
 - when running under `SSH_TTY`, clipboard behavior is adjusted for remote sessions
 - when running in Neovide, GUI-specific settings are loaded from `lua/config/neovide.lua`
-- some provider and tool paths are resolved from the local machine using `mise`
+- Python and Ruby provider paths are resolved from the local machine using `mise` on first relevant filetype use
 
 Because of that, this repository is best treated as a personal config rather than a drop-in universal distribution.
 

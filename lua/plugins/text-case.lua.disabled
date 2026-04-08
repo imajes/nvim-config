@@ -1,3 +1,7 @@
+-- Deprecated 2026-04-08: parked pending the next keep-or-purge cycle.
+-- This stays out of the active plugin graph until the workflow is worth reviving.
+-- Restore by renaming this file back to `text-case.lua`.
+--
 -- Section: Editor, Text case manipulation
 -- ---------------------------------------
 

@@ -25,6 +25,8 @@ local header_gradients = {
   },
 }
 local selected_header_gradients = {}
+-- Deprecated 2026-04-08: parked pending the next keep-or-purge cycle.
+-- Keep the implementation handy, but leave it out of the active dashboard path.
 local show_git_status = false
 
 local function in_git_repo()
