@@ -39,3 +39,6 @@ vim.g.neovide_normal_opacity = 0.8
 vim.g.neovide_window_blurred = true
 
 -- vim.g.neovide_profiler = true
+
+-- matching pair highlights: https://neovide.dev/configuration.html#highlight-matching-pair-macos-only
+vim.g.neovide_highlight_matching_pair = true

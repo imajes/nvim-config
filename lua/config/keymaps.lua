@@ -19,6 +19,9 @@ set({ "i", "n", "v" }, "<D-a>", "<ESC>ggVG", { desc = "Select all" })
 
 if vim.g.neovide then
   vim.g.neovide_input_use_logo = 1 -- enable use of the logo (cmd) key
+  -- https://neovide.dev/commands.html#force-click-macos-nightly
+  set("n", "<X1Mouse>", "<Cmd>NeovideForceClick<CR>", { silent = true })
+  set("n", "<leader>k", "<Cmd>NeovideForceClick<CR>", { silent = true })
 end
 
 -- Support logo-key shortcuts in environments that forward <D-...> to Neovim.
