@@ -51,7 +51,8 @@ require("lazy").setup({
     -- extras. managed here vs lazyvim.json for easier customization
 
     -- load these first as they describe/inform UI/utils
-    { import = "lazyvim.plugins.extras.ui.alpha" },
+    { import = "config.dashboard" },
+    -- { import = "lazyvim.plugins.extras.ui.alpha" },
     { import = "lazyvim.plugins.extras.ui.edgy" },
     { import = "lazyvim.plugins.extras.ui.indent-blankline" },
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
@@ -91,11 +92,11 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.coding.neogen" },
     { import = "lazyvim.plugins.extras.coding.yanky" },
-
-    -- ai code hax0rs
-    -- { import = "lazyvim.plugins.extras.ai.copilot" },
-    -- { import = "lazyvim.plugins.extras.ai.copilot-chat" },
-
+    --
+    -- -- ai code hax0rs
+    -- -- { import = "lazyvim.plugins.extras.ai.copilot" },
+    -- -- { import = "lazyvim.plugins.extras.ai.copilot-chat" },
+    --
     -- formatting & linting
     { import = "lazyvim.plugins.extras.formatting.black" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
@@ -190,19 +191,6 @@ require("lazy").setup({
     },
   },
 })
-
--- local logo = [[
---     ██╗░░██╗░█████╗░░█████╗░██╗░░██╗████████╗██╗░░██╗███████╗██████╗░██╗░░░░░░█████╗░███╗░░██╗███████╗████████╗
---     ██║░░██║██╔══██╗██╔══██╗██║░██╔╝╚══██╔══╝██║░░██║██╔════╝██╔══██╗██║░░░░░██╔══██╗████╗░██║██╔════╝╚══██╔══╝
---     ███████║███████║██║░░╚═╝█████═╝░░░░██║░░░███████║█████╗░░██████╔╝██║░░░░░███████║██╔██╗██║█████╗░░░░░██║░░░
---     ██╔══██║██╔══██║██║░░██╗██╔═██╗░░░░██║░░░██╔══██║██╔══╝░░██╔═══╝░██║░░░░░██╔══██║██║╚████║██╔══╝░░░░░██║░░░
---     ██║░░██║██║░░██║╚█████╔╝██║░╚██╗░░░██║░░░██║░░██║███████╗██║░░░░░███████╗██║░░██║██║░╚███║███████╗░░░██║░░░
---     ╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚══╝╚══════╝░░░╚═╝░░░
--- ]]
--- logo = string.rep("\n", 4) .. logo .. "\n\n"
---
--- local dashboard = require("alpha.themes.dashboard")
--- dashboard.section.header.val = vim.split(logo, "\n")
 
 -- close lazy panel with esc
 vim.api.nvim_create_autocmd("FileType", {

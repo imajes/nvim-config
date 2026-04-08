@@ -16,7 +16,7 @@ The configuration is centered around a LazyVim base, a broad set of LazyVim extr
 Some notable customizations currently in the tree:
 
 - automatic dark/light colorscheme switching
-- a `snacks.nvim` dashboard configuration
+- a `snacks.nvim` dashboard with a boxed two-pane layout, git-aware footer content, and an optional terminal-rendered header
 - extra LSP tuning for `basedpyright`, shellcheck integration, Ruby, Go, and database tooling
 - SSH-aware clipboard adjustments for remote sessions
 - custom diagnostic navigation helpers
@@ -98,6 +98,8 @@ The effective startup path is:
 2. `lua/config/lazy.lua`
 3. LazyVim base plugins and selected extras
 4. local imports from `lua/config/*` and `lua/plugins/*`
+
+Notable startup-visible behavior includes the custom Snacks dashboard from `lua/config/dashboard.lua`, which prefers a terminal-rendered "hack the planet" header when the local `toilet` plus `lolcrab` toolchain is available and falls back to raw text when it is not.
 
 This means most behavior in this repo is defined by:
 
