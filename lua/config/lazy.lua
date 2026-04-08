@@ -24,8 +24,6 @@ require("lazy").setup({
       },
     },
 
-    { import = "plugins.colors" },
-
     { "folke/noice.nvim" },
 
     -- this didn't execute inside of plugins, so force it up here first
@@ -141,11 +139,10 @@ require("lazy").setup({
     { import = "plugins.lsp.basedpyright" },
     { import = "plugins.lsp.shellcheck" },
 
-    -- import/override with your plugins
+    -- import/override with your local plugin modules
     { import = "plugins" },
-    -- specific [non-glob] files in local plugins
+    -- language-specific local modules
     { import = "plugins.langs.ruby" },
-    { import = "plugins.langs.databases" },
     { import = "plugins.langs.go" },
   },
 
