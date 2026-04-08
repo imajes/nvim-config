@@ -4,15 +4,15 @@
 return {
   {
     "RRethy/nvim-treesitter-endwise",
-    lazy = false,
-    event = "InsertEnter",
+    ft = { "ruby" },
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      opts = {
-        endwise = { enable = true },
+      {
+        "nvim-treesitter/nvim-treesitter",
+        opts = function(_, opts)
+          opts.endwise = { enable = true }
+        end,
       },
     },
-    ft = { "ruby" },
   },
 
   -- https://github.com/RRethy/nvim-treesitter-textsubjects

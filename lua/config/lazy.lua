@@ -20,7 +20,7 @@ require("lazy").setup({
       import = "lazyvim.plugins",
 
       opts = {
-        -- colorscheme = vim.g.preferred_colorscheme,
+        colorscheme = "duskfox",
       },
     },
 

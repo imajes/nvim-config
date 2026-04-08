@@ -16,6 +16,7 @@ The configuration is centered around a LazyVim base, a broad set of LazyVim extr
 Some notable customizations currently in the tree:
 
 - automatic dark/light colorscheme switching
+- only the Nightfox family is exposed eagerly for colorscheme selection and preview; other theme plugins stay lazy until explicitly enabled in `lua/plugins/colors.lua`
 - a `snacks.nvim` dashboard with a boxed two-pane layout, git-aware footer content, and an optional terminal-rendered header
 - extra LSP tuning for `basedpyright`, shellcheck integration, Ruby, Go, and database tooling
 - SSH-aware clipboard adjustments for remote sessions

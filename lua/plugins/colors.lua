@@ -1,6 +1,21 @@
 -- Section: UI, Color Schemes
 -- ---------------------------------
 
+local eager_theme_plugins = {
+  -- Themes in this table are exposed to picker/completion at startup.
+  -- Everything else stays lazy and only loads if you opt back into it here.
+  ["EdenEast/nightfox.nvim"] = true,
+}
+
+local function theme(spec)
+  local repo = spec[1]
+  if not eager_theme_plugins[repo] then
+    spec.lazy = true
+    spec.priority = nil
+  end
+  return spec
+end
+
 return {
 
   -- {
@@ -11,7 +26,7 @@ return {
   --   lazy = true,
   -- },
   --
-  {
+  theme({
     "loctvl842/monokai-pro.nvim",
     config = function()
       local monokai = require("monokai-pro")
@@ -41,29 +56,26 @@ return {
       monokai.load()
     end,
     lazy = true,
-  },
+  }),
 
-  {
+  theme({
     "ray-x/aurora",
-    lazy = true,
     init = function()
       vim.g.aurora_italic = 1
       vim.g.aurora_transparent = 1
       vim.g.aurora_bold = 1
     end,
-  },
+  }),
 
-  {
+  theme({
     "JoosepAlviste/palenightfall.nvim",
     config = function()
       -- require("palenightfall").setup()
     end,
-    lazy = true,
-  },
+  }),
 
-  {
+  theme({
     "scottmckendry/cyberdream.nvim",
-    lazy = false,
     priority = 1000,
     config = function()
       require("cyberdream").setup({
@@ -73,11 +85,10 @@ return {
         cache = true,
       })
     end,
-  },
+  }),
 
-  {
+  theme({
     "uloco/bluloco.nvim",
-    lazy = false,
     priority = 1000,
     dependencies = { "rktjmp/lush.nvim" },
     config = function()
@@ -89,15 +100,14 @@ return {
         guicursor = true,
       })
     end,
-  },
+  }),
 
-  {
+  theme({
     "savq/melange-nvim",
     -- config = function()
     --   require("palenightfall").setup()
     -- end,
-    lazy = true,
-  },
+  }),
 
   -- {
   --   "noorwachid/nvim-nightsky",
@@ -115,14 +125,13 @@ return {
   --   lazy = true,
   -- },
 
-  {
+  theme({
     "sainnhe/gruvbox-material",
     config = function()
       vim.g.gruvbox_material_better_performance = 1
       vim.g.gruvbox_material_background = "hard"
     end,
-    lazy = true,
-  },
+  }),
   -- {
   --   "nekonako/xresources-nvim",
   --   config = function()
@@ -130,58 +139,54 @@ return {
   --   end,
   --   lazy = true,
   -- },
-  {
+  theme({
     "folke/tokyonight.nvim",
     opts = { style = "moon" },
-    lazy = true,
-  },
+  }),
 
-  {
+  theme({
     "sainnhe/sonokai",
     config = function()
       vim.g.sonokai_style = "atlantis"
       vim.g.sonokai_better_performance = 1
     end,
-    lazy = true,
-  },
+  }),
 
-  {
+  theme({
     "sainnhe/everforest",
     config = function()
       vim.g.everforest_background = "dark"
       vim.g.everforest_better_performance = 1
     end,
-    lazy = true,
-  },
+  }),
 
-  {
+  theme({
     "sainnhe/edge",
     config = function()
       vim.g.edge_style = "neon"
       vim.g.edge_better_performance = 1
     end,
-    lazy = true,
-  },
+  }),
 
-  { "kepano/flexoki-neovim", lazy = false },
-  { "mhartington/oceanic-next", lazy = true },
-  { "AlexvZyl/nordic.nvim", lazy = true },
-  { "EdenEast/nightfox.nvim", lazy = false },
-  { "LunarVim/horizon.nvim", lazy = true },
-  { "LunarVim/onedarker.nvim", lazy = true },
-  { "LunarVim/synthwave84.nvim", lazy = true },
-  { "Yazeed1s/oh-lucy.nvim", lazy = true },
-  { "bluz71/vim-nightfly-colors", lazy = true },
-  { "catppuccin/nvim", name = "catppuccin", lazy = true },
+  theme({ "kepano/flexoki-neovim" }),
+  theme({ "mhartington/oceanic-next" }),
+  theme({ "AlexvZyl/nordic.nvim" }),
+  theme({ "EdenEast/nightfox.nvim" }),
+  theme({ "LunarVim/horizon.nvim" }),
+  theme({ "LunarVim/onedarker.nvim" }),
+  theme({ "LunarVim/synthwave84.nvim" }),
+  theme({ "Yazeed1s/oh-lucy.nvim" }),
+  theme({ "bluz71/vim-nightfly-colors" }),
+  theme({ "catppuccin/nvim", name = "catppuccin" }),
   -- { "flazz/vim-colorschemes", lazy = true },
-  { "glepnir/zephyr-nvim", lazy = true },
-  { "hhsnopek/vim-firewatch", lazy = true },
-  { "kvrohit/mellow.nvim", lazy = true },
-  { "liuchengxu/space-vim-theme", lazy = true },
-  { "martinsione/darkplus.nvim", lazy = true },
-  { "projekt0n/github-nvim-theme", lazy = true },
-  { "ramojus/mellifluous.nvim", lazy = true },
-  { "ray-x/starry.nvim", lazy = true },
-  { "talha-akram/noctis.nvim", lazy = true },
-  { "wincent/base16-nvim", lazy = true },
+  theme({ "glepnir/zephyr-nvim" }),
+  theme({ "hhsnopek/vim-firewatch" }),
+  theme({ "kvrohit/mellow.nvim" }),
+  theme({ "liuchengxu/space-vim-theme" }),
+  theme({ "martinsione/darkplus.nvim" }),
+  theme({ "projekt0n/github-nvim-theme" }),
+  theme({ "ramojus/mellifluous.nvim" }),
+  theme({ "ray-x/starry.nvim" }),
+  theme({ "talha-akram/noctis.nvim" }),
+  theme({ "wincent/base16-nvim" }),
 }
