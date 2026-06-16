@@ -14,7 +14,7 @@ M.light_schemes = {
   -- "cupertino",
   -- "cyberdream-light",
   "dayfox",
-  "dawnfox",
+  -- "dawnfox",
   -- "equilibrium-gray-light",
   -- "github_light",
   -- "github_light_default",

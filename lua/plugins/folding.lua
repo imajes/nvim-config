@@ -3,7 +3,9 @@
 
 return {
   "kevinhwang91/nvim-ufo",
-  dependencies = "kevinhwang91/promise-async",
+  dependencies = {
+    "kevinhwang91/promise-async",
+  },
   event = "UIEnter", -- needed for folds to load in time and comments being closed
   keys = {
     { "<leader>if", vim.cmd.UfoInspect, desc = " Fold info" },
