@@ -16,7 +16,7 @@ The configuration is centered around a LazyVim base, a broad set of LazyVim extr
 
 Some notable customizations currently in the tree:
 
-- automatic dark/light colorscheme switching
+- terminal background detection selects dayfox (light) or duskfox (dark); Neovide retains OS appearance polling
 - only the Nightfox family is exposed eagerly for colorscheme selection and preview; other theme plugins stay lazy until explicitly enabled in `lua/plugins/colors.lua`
 - a `snacks.nvim` dashboard with a boxed two-pane layout and an optional terminal-rendered header
 - the dashboard vendors the `rebel.tlf` toilet font under `fonts/` so the terminal header does not depend on a machine-local font checkout
@@ -142,6 +142,20 @@ This config enables a wide range of language extras through LazyVim and local pl
 Some languages are handled entirely through LazyVim extras, while others also have local overrides in `lua/plugins/langs/` or `lua/plugins/lsp/`.
 
 ## Remote and GUI Notes
+
+`lua/config/terminal_appearance.lua` uses Neovim's native terminal background
+query and follows the resulting `background` option. It handles a response that
+arrives after config loading, including SSH and root sessions, without depending
+on an inherited `LIGHT_MODE`. It does not set the terminal's background. Neovide
+keeps `auto-dark-mode.nvim` for its GUI appearance; terminal Neovim no longer polls
+the remote operating system. If a terminal does not answer, Neovim retains its
+existing/default background. Exact palette recognition remains separate work.
+
+Run `python3 -m unittest discover -s tests -v` with an existing Nightfox checkout
+at `~/.local/share/nvim/lazy/nightfox.nvim`, or set `NIGHTFOX_PATH`. These tests use
+temporary homes/caches and the real plugin, with headless and terminal-query
+cases. They do not load LazyVim or install/update plugins. Terminal tests need
+permission to use PTY ioctls. Check the changed Lua with `stylua --check` as well.
 
 This repo contains environment-specific behavior:
 

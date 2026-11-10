@@ -23,7 +23,9 @@ require("lazy").setup({
       import = "lazyvim.plugins",
 
       opts = {
-        colorscheme = "duskfox",
+        colorscheme = function()
+          require("config.terminal_appearance").setup()
+        end,
       },
     },
 
@@ -32,6 +34,7 @@ require("lazy").setup({
     -- this didn't execute inside of plugins, so force it up here first
     {
       "f-person/auto-dark-mode.nvim",
+      enabled = not not vim.g.neovide,
       lazy = false,
       priority = 10000,
       opts = {
@@ -143,6 +146,8 @@ require("lazy").setup({
     -- language-specific local modules
     { import = "plugins.langs.ruby" },
     { import = "plugins.langs.go" },
+    -- lsp related
+    { import = "plugins.lsp.markdownlint" },
   },
 
   defaults = {

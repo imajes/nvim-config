@@ -6,3 +6,6 @@
 
 # Local scratch space
 /scratch/
+
+.worktrees/
+**/__pycache__/
